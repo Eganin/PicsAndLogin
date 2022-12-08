@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PicsAngLoginApp</string>
+    <string name="network_exception">Network is unavailable</string>
+    <string name="some_exception">Something went wrong</string>
 </resources>
