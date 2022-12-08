@@ -2,6 +2,7 @@ package com.example.picsangloginapp.domain.login
 
 import com.example.picsangloginapp.core.exception.ExceptionHandler
 import com.example.picsangloginapp.core.mapper.Mapper
+import com.example.picsangloginapp.data.login.WeatherDto
 
 class LoginInteractorImpl(
     private val repository: LoginRepository,
