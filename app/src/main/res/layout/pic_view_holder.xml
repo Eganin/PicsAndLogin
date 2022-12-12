@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/pic_card_view_height"
+    android:layout_margin="@dimen/margin_default">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.picsangloginapp.core.other.MyImageView
+            android:layout_margin="@dimen/margin_small"
+            android:layout_height="@dimen/pic_iv_height"
+            android:layout_width="match_parent"
+            android:id="@+id/pic_image_view"
+            android:adjustViewBounds="true" />
+
+        <com.example.picsangloginapp.core.other.MyTextView
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/pic_description_tv"
+            tools:text="Some description"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
