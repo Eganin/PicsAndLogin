@@ -4,8 +4,9 @@ import com.example.picsangloginapp.core.other.stringSuspending
 import com.example.picsangloginapp.domain.pics.PicsRepository
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import javax.inject.Inject
 
-class PicsRepositoryImpl(private val service: PicsService) : PicsRepository {
+class PicsRepositoryImpl @Inject constructor(private val service: PicsService) : PicsRepository {
 
     private val gson = Gson()
     private val type = object : TypeToken<List<PicDto>>() {}.type

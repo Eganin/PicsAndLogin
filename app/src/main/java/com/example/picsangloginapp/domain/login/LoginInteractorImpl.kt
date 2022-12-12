@@ -3,8 +3,9 @@ package com.example.picsangloginapp.domain.login
 import com.example.picsangloginapp.core.exception.ExceptionHandler
 import com.example.picsangloginapp.core.mapper.Mapper
 import com.example.picsangloginapp.data.login.WeatherDto
+import javax.inject.Inject
 
-class LoginInteractorImpl(
+class LoginInteractorImpl @Inject constructor(
     private val repository: LoginRepository,
     private val mapper: Mapper<WeatherItem, WeatherDto>,
     private val exceptionHandler: ExceptionHandler

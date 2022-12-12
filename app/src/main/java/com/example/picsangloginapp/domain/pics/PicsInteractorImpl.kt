@@ -3,8 +3,9 @@ package com.example.picsangloginapp.domain.pics
 import com.example.picsangloginapp.core.exception.ExceptionHandler
 import com.example.picsangloginapp.core.mapper.Mapper
 import com.example.picsangloginapp.data.pics.PicDto
+import javax.inject.Inject
 
-class PicsInteractorImpl(
+class PicsInteractorImpl @Inject constructor(
     private val repository: PicsRepository,
     private val mapper: Mapper<List<PicItem>, List<PicDto>>,
     private val exceptionHandler: ExceptionHandler
