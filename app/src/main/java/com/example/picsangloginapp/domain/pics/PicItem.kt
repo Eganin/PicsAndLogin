@@ -11,7 +11,6 @@ sealed class PicItem {
 
     data class Error(private val exceptionType: ExceptionType = ExceptionType.GENERIC) : PicItem() {
         override fun <T> map(mapper: PicItemUiMapper<T>) = mapper.map(exceptionType = exceptionType)
-
     }
 }
 

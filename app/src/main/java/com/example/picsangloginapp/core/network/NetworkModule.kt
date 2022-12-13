@@ -11,8 +11,8 @@ import retrofit2.create
 class NetworkModule {
 
     companion object {
-        const val PICS_BASE_URL = "https://picsum.photos/v2/";
-        const val LOGIN_BASE_URL = "https://api.openweathermap.org/data/2.5/";
+        const val PICS_BASE_URL = "https://picsum.photos/v2/"
+        const val LOGIN_BASE_URL = "https://api.openweathermap.org/data/2.5/"
     }
 
     private val converterFactory = GsonConverterFactory.create()

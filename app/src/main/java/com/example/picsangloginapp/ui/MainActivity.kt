@@ -25,14 +25,14 @@ class MainActivity : AppCompatActivity() {
         val loginFragment = if (savedInstanceState == null) LoginFragment()
         else supportFragmentManager.findFragmentByTag(LOGIN_FRAGMENT_TAG)!!
 
-        if (savedInstanceState == null) {
+        if (savedInstanceState == null)
             supportFragmentManager.beginTransaction().apply {
                 add(R.id.container, loginFragment, LOGIN_FRAGMENT_TAG)
                 hide(loginFragment)
                 add(R.id.container, picsFragment, PICS_FRAGMENT_TAG)
                 commit()
             }
-        } else
+        else
             binding.navView.selectedItemId =
                 if (savedInstanceState.getBoolean(IS_LOGIN_SELECTED_KEY)) R.id.navigation_login
                 else R.id.navigation_pics

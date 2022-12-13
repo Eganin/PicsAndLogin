@@ -2,6 +2,7 @@ package com.example.picsangloginapp.di
 
 import android.content.Context
 import com.example.picsangloginapp.R
+import com.example.picsangloginapp.core.dispatchers.DispatchersList
 import com.example.picsangloginapp.core.exception.ExceptionHandler
 import com.example.picsangloginapp.core.exception.ExceptionHandlerImpl
 import com.example.picsangloginapp.core.mapper.Mapper
@@ -20,6 +21,8 @@ import com.example.picsangloginapp.domain.login.validators.EmptinessValidator
 import com.example.picsangloginapp.domain.login.validators.MinLengthValidator
 import com.example.picsangloginapp.domain.login.validators.PasswordValidator
 import com.example.picsangloginapp.domain.pics.*
+import com.example.picsangloginapp.ui.login.LoginCommunication
+import com.example.picsangloginapp.ui.login.WeatherUiMapperImpl
 import com.example.picsangloginapp.ui.login.WeatherUiModel
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
 import dagger.Module
@@ -36,6 +39,12 @@ object AppModule : InstanceProvider {
     @Singleton
     @Provides
     override fun provideNetworkModule() = NetworkModule()
+
+    @Singleton
+    @Provides
+    override fun provideDispatchers(): DispatchersList {
+        return DispatchersList.Base()
+    }
 
     @Singleton
     @Provides
@@ -85,6 +94,12 @@ object AppModule : InstanceProvider {
 
     @Singleton
     @Provides
+    override fun provideLoginCommunication(): LoginCommunication {
+        return LoginCommunication.Base()
+    }
+
+    @Singleton
+    @Provides
     override fun providePicsService(networkModule: NetworkModule): PicsService =
         networkModule.getPicsService()
 
@@ -109,7 +124,7 @@ object AppModule : InstanceProvider {
     @Singleton
     @Provides
     override fun provideWeatherUiMapper(resourceManager: ResourceManager): WeatherUiMapper<WeatherUiModel> {
-        TODO("Not yet implemented")
+        return WeatherUiMapperImpl(resourceManager = resourceManager)
     }
 
     @Singleton

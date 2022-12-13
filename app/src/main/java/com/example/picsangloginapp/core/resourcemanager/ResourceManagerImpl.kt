@@ -5,6 +5,7 @@ import com.example.picsangloginapp.R
 import com.example.picsangloginapp.core.exception.ExceptionType
 
 class ResourceManagerImpl(private val context: Context) : ResourceManager {
+
     override fun getString(resId: Int) = context.getString(resId)
 
     override fun getString(resId: Int, vararg args: Any?) = context.getString(resId, *args)
