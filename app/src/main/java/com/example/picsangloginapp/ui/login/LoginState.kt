@@ -26,14 +26,14 @@ sealed class LoginState {
     data class LoginError(private val value : String) : LoginState(){
 
         override fun handle(binding: FragmentLayoutBinding)= with(binding) {
-            passwordTextInputLayout.show(show=true, message = value)
+            emailAddressTextInputLayout.show(show = true, message = value)
         }
     }
 
     data class PasswordError(private val value : String): LoginState(){
 
         override fun handle(binding: FragmentLayoutBinding) = with(binding){
-            emailAddressTextInputLayout.show(show = true, message = value)
+            passwordTextInputLayout.show(show=true, message = value)
         }
     }
 
