@@ -21,7 +21,7 @@ fun ViewGroup.inflate(@LayoutRes layoutResId : Int) : View=
 
 fun EditText.listenChanges(blockAction : () -> Unit){
     addTextChangedListener(object : SimpleTextChangeListener() {
-        override fun afterTextChanged(s: Editable?) {
+        override fun afterTextChanged(p0: Editable?) {
             blockAction()
         }
     })

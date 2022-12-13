@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.picsangloginapp.R
+import com.example.picsangloginapp.core.other.listenChanges
+import com.example.picsangloginapp.core.other.load
 import com.example.picsangloginapp.databinding.FragmentLayoutBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,6 +32,31 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupUI()
+    }
+
+    private fun setupUI(){
+        binding.progressBar.bringToFront()
+        binding.logoImageView.load(getString(R.string.logo_url))
+
+        viewModel.observe(owner = this){
+            it.handle(binding=binding)
+        }
+
+        binding.loginButton.setOnClickListener {
+            viewModel.login(
+                email = binding.emailAddressEditText.text.toString(),
+                password = binding.passwordEditText.text.toString()
+            )
+        }
+
+        binding.emailAddressEditText.listenChanges {
+            binding.emailAddressTextInputLayout.show(show = false, message = "")
+        }
+
+        binding.passwordEditText.listenChanges {
+            binding.passwordTextInputLayout.show(show = false, message = "")
+        }
     }
 
     override fun onDestroyView() {
