@@ -39,10 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.setOnItemSelectedListener {
             val showPics = it.itemId == R.id.navigation_pics
-            supportFragmentManager.beginTransaction()
-                .hide(if (showPics) loginFragment else picsFragment)
-                .show(if (showPics) picsFragment else loginFragment)
-                .commit()
+            supportFragmentManager.beginTransaction().apply {
+                hide(if (showPics) loginFragment else picsFragment)
+                show(if (showPics) picsFragment else loginFragment)
+                commit()
+            }
             true
         }
     }

@@ -7,13 +7,13 @@ data class WeatherUiModel(
     private val isError : Boolean=false
 ){
 
-//    fun map(communication: LoginCommunication)=
-//        communication.map(
-//            if(isError)
-//                LoginState.Error(value=this)
-//            else
-//                LoginState.Success(value =this)
-//        )
-//
-//    fun show(textContainer: TextContainer) = textContainer.show(text = description)
+    fun map(communication: LoginCommunication)=
+        communication.map(
+            if(isError)
+                LoginState.Error(value=this)
+            else
+                LoginState.Success(value =this)
+        )
+
+    fun show(textContainer: TextContainer) = textContainer.show(text = description)
 }
