@@ -11,12 +11,13 @@ interface ViewModelCommunication<T> : Observe<T> {
         private val liveData: MutableLiveData<T> = MutableLiveData()
     ) : ViewModelCommunication<T> {
 
-        override fun observe(owner: LifecycleOwner, observer: Observer<T>) {
+        override fun observe(owner: LifecycleOwner, observer: Observer<T>) =
             liveData.observe(owner, observer)
-        }
 
         override fun map(source: T) {
-            liveData.value = source!!
+            source?.let {
+                liveData.postValue(it)
+            }
         }
     }
 }

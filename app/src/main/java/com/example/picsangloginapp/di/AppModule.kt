@@ -25,8 +25,10 @@ import com.example.picsangloginapp.domain.pics.*
 import com.example.picsangloginapp.ui.login.LoginState
 import com.example.picsangloginapp.ui.login.WeatherUiMapperImpl
 import com.example.picsangloginapp.ui.login.WeatherUiModel
+import com.example.picsangloginapp.ui.pics.PicUiMapper
 import com.example.picsangloginapp.ui.pics.PicsUiMapper
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
+import com.example.picsangloginapp.ui.pics.adapter.PicUiModelType
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -143,7 +145,7 @@ object AppModule : InstanceProvider {
 
     @Singleton
     @Provides
-    override fun providePicsCommunication(): ViewModelCommunication<PicUiModel> {
+    override fun providePicsCommunication(): ViewModelCommunication<List<PicUiModel>> {
         return ViewModelCommunication.Base()
     }
 }

@@ -1,25 +1,19 @@
 package com.example.picsangloginapp.ui.login
 
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
-import com.example.picsangloginapp.core.dispatchers.DispatchersList
 import com.example.picsangloginapp.core.exception.ExceptionType
 import com.example.picsangloginapp.core.validation.UiValidator
 import com.example.picsangloginapp.domain.login.LoginInteractor
 import com.example.picsangloginapp.domain.login.WeatherItem
 import com.example.picsangloginapp.domain.login.WeatherUiMapper
+import com.example.picsangloginapp.ui.BaseUiTest
 import com.google.common.truth.Truth.assertThat
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestCoroutineDispatcher
 import org.junit.Test
 
-@ExperimentalCoroutinesApi
-internal class LoginViewModelTest {
+internal class LoginViewModelTest: BaseUiTest() {
 
     @Test
     fun test_both_empty() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val empty = FakeValidator(valid = false, message = "Input is empty")
         val viewModel = LoginViewModel(
@@ -42,7 +36,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_empty_email_valid_password() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = false, message = "Input is empty")
         val password = FakeValidator(valid = true, message = "")
@@ -61,7 +55,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_invalid_email_valid_password() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = false, message = "Email is incorrect")
         val password = FakeValidator(valid = true, message = "")
@@ -80,7 +74,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_valid_email() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = true, message = "")
         val password = FakeValidator(valid = false, message = "Input is empty")
@@ -98,7 +92,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_password_invalid_length() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = true, message = "")
         val password =
@@ -119,7 +113,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_password_invalid() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = true, message = "")
         val password =
@@ -145,7 +139,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_input_valid_no_connection() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val valid = FakeValidator(valid = true, message = "")
         val viewModel = LoginViewModel(
@@ -170,7 +164,7 @@ internal class LoginViewModelTest {
 
     @Test
     fun test_input_valid() {
-        val communication = FakeLoginCommunication.Base()
+        val communication = FakeCommunication.Base<LoginState>()
         val interactor = FakeInteractor(
             item = WeatherItem.Basic(
                 description = "description",
@@ -197,14 +191,6 @@ internal class LoginViewModelTest {
         )
     }
 
-    private class TestDispatchersList(
-        private val dispatcher: CoroutineDispatcher = TestCoroutineDispatcher()
-    ) : DispatchersList {
-
-        override fun io() = dispatcher
-        override fun ui() = dispatcher
-    }
-
     private class FakeMapper(private val error: String) : WeatherUiMapper<WeatherUiModel> {
 
         override fun map(feelsLike: Int, description: String, temp: Int): WeatherUiModel {
@@ -222,24 +208,6 @@ internal class LoginViewModelTest {
         override fun errorMessage() = message
 
         override fun isValid(text: String) = valid
-    }
-
-    private interface FakeLoginCommunication : LoginCommunication {
-
-        fun state(): LoginState
-
-        class Base : FakeLoginCommunication {
-
-            private var state: LoginState? = null
-
-            override fun observe(owner: LifecycleOwner, observer: Observer<LoginState>) = Unit
-
-            override fun map(source: LoginState) {
-                state = source
-            }
-
-            override fun state() = state!!
-        }
     }
 
     private class FakeInteractor(

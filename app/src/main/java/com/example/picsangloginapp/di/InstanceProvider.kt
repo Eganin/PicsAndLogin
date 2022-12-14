@@ -59,5 +59,5 @@ interface PicsInstancesProvider : PicsUiInstanceProvider {
 interface PicsUiInstanceProvider {
 
     fun providePicsUiMapper(resourceManager: ResourceManager): Mapper<List<PicUiModel>, List<PicItem>>
-    fun providePicsCommunication(): ViewModelCommunication<PicUiModel>
+    fun providePicsCommunication(): ViewModelCommunication<List<PicUiModel>>
 }

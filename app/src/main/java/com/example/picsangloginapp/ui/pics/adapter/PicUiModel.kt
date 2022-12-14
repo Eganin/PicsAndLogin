@@ -8,7 +8,7 @@ abstract class PicUiModel(val type: PicUiModelType) {
     open fun show(textContainer: TextContainer, imageContainer: ImageContainer) {}
 }
 
-class Basic(private val text: String, private val url: String) :
+data class Basic(private val text: String, private val url: String) :
     PicUiModel(type = PicUiModelType.BASIC) {
 
     override fun show(textContainer: TextContainer, imageContainer: ImageContainer) {
@@ -26,10 +26,11 @@ abstract class AnyError(private val message: String, type: PicUiModelType) :
     override fun show(textContainer: TextContainer) = textContainer.show(text = message)
 }
 
-class FullSizeError(message: String) :
+data class FullSizeError(private val message: String) :
     AnyError(message = message, type = PicUiModelType.FULL_SIZE_ERROR)
 
-class BottomError(message: String) : AnyError(message = message, type = PicUiModelType.BOTTOM_ERROR)
+data class BottomError(private val message: String) :
+    AnyError(message = message, type = PicUiModelType.BOTTOM_ERROR)
 
 enum class PicUiModelType {
     BASIC,
