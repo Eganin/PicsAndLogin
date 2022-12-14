@@ -5,6 +5,7 @@ import com.example.picsangloginapp.core.dispatchers.DispatchersList
 import com.example.picsangloginapp.core.exception.ExceptionHandler
 import com.example.picsangloginapp.core.mapper.Mapper
 import com.example.picsangloginapp.core.network.NetworkModule
+import com.example.picsangloginapp.core.observer.ViewModelCommunication
 import com.example.picsangloginapp.core.resourcemanager.ResourceManager
 import com.example.picsangloginapp.core.validation.UiValidator
 import com.example.picsangloginapp.data.login.LoginService
@@ -14,7 +15,7 @@ import com.example.picsangloginapp.data.pics.PicsService
 import com.example.picsangloginapp.domain.login.WeatherItem
 import com.example.picsangloginapp.domain.login.WeatherUiMapper
 import com.example.picsangloginapp.domain.pics.PicItem
-import com.example.picsangloginapp.ui.login.LoginCommunication
+import com.example.picsangloginapp.ui.login.LoginState
 import com.example.picsangloginapp.ui.login.WeatherUiModel
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
 
@@ -46,7 +47,7 @@ interface LoginUiInstanceProvider {
         emptyValidator: UiValidator
     ): UiValidator
 
-    fun provideLoginCommunication(): LoginCommunication
+    fun provideLoginCommunication(): ViewModelCommunication<LoginState>
 }
 
 interface PicsInstancesProvider : PicsUiInstanceProvider {
@@ -58,4 +59,5 @@ interface PicsInstancesProvider : PicsUiInstanceProvider {
 interface PicsUiInstanceProvider {
 
     fun providePicsUiMapper(resourceManager: ResourceManager): Mapper<List<PicUiModel>, List<PicItem>>
+    fun providePicsCommunication(): ViewModelCommunication<PicUiModel>
 }

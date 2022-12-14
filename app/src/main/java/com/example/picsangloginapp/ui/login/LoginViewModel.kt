@@ -5,6 +5,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.picsangloginapp.core.dispatchers.DispatchersList
+import com.example.picsangloginapp.core.observer.Observe
+import com.example.picsangloginapp.core.observer.ViewModelCommunication
 import com.example.picsangloginapp.core.validation.UiValidator
 import com.example.picsangloginapp.di.EmailValidation
 import com.example.picsangloginapp.di.PasswordValidation
@@ -17,13 +19,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val communication: LoginCommunication,
+    private val communication: ViewModelCommunication<LoginState>,
     private val interactor: LoginInteractor,
     private val mapper: WeatherUiMapper<WeatherUiModel>,
     @EmailValidation private val validateEmail: UiValidator,
     @PasswordValidation private val validatePassword: UiValidator,
     private val dispatchers: DispatchersList
-) : ViewModel(), Observe {
+) : ViewModel(), Observe<LoginState> {
 
     override fun observe(owner: LifecycleOwner, observer: Observer<LoginState>) {
         communication.observe(owner = owner, observer = observer)

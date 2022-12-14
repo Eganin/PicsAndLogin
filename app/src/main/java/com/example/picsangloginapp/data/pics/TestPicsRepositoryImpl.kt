@@ -20,7 +20,7 @@ class TestPicsRepositoryImpl : PicsRepository {
 
     private fun generateList(): List<PicDto> {
         val list = mutableListOf<PicDto>()
-        (0..10).forEach { i ->
+        repeat((0..10).count()) {
             val size = dataList.size + list.size
             list.add(
                 PicDto(

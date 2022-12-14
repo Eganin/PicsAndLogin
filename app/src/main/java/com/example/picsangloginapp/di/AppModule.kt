@@ -7,6 +7,7 @@ import com.example.picsangloginapp.core.exception.ExceptionHandler
 import com.example.picsangloginapp.core.exception.ExceptionHandlerImpl
 import com.example.picsangloginapp.core.mapper.Mapper
 import com.example.picsangloginapp.core.network.NetworkModule
+import com.example.picsangloginapp.core.observer.ViewModelCommunication
 import com.example.picsangloginapp.core.resourcemanager.ResourceManager
 import com.example.picsangloginapp.core.resourcemanager.ResourceManagerImpl
 import com.example.picsangloginapp.core.validation.UiValidator
@@ -21,9 +22,10 @@ import com.example.picsangloginapp.domain.login.validators.EmptinessValidator
 import com.example.picsangloginapp.domain.login.validators.MinLengthValidator
 import com.example.picsangloginapp.domain.login.validators.PasswordValidator
 import com.example.picsangloginapp.domain.pics.*
-import com.example.picsangloginapp.ui.login.LoginCommunication
+import com.example.picsangloginapp.ui.login.LoginState
 import com.example.picsangloginapp.ui.login.WeatherUiMapperImpl
 import com.example.picsangloginapp.ui.login.WeatherUiModel
+import com.example.picsangloginapp.ui.pics.PicsUiMapper
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
 import dagger.Module
 import dagger.Provides
@@ -94,8 +96,8 @@ object AppModule : InstanceProvider {
 
     @Singleton
     @Provides
-    override fun provideLoginCommunication(): LoginCommunication {
-        return LoginCommunication.Base()
+    override fun provideLoginCommunication(): ViewModelCommunication<LoginState> {
+        return ViewModelCommunication.Base()
     }
 
     @Singleton
@@ -136,6 +138,12 @@ object AppModule : InstanceProvider {
     @Singleton
     @Provides
     override fun providePicsUiMapper(resourceManager: ResourceManager): Mapper<List<PicUiModel>, List<PicItem>> {
-        TODO("Not yet implemented")
+        return PicsUiMapper(resourceManager = resourceManager)
+    }
+
+    @Singleton
+    @Provides
+    override fun providePicsCommunication(): ViewModelCommunication<PicUiModel> {
+        return ViewModelCommunication.Base()
     }
 }
