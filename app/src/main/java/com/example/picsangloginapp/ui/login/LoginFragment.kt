@@ -39,7 +39,7 @@ class LoginFragment : Fragment() {
         binding.progressBar.bringToFront()
         binding.logoImageView.load(getString(R.string.logo_url))
 
-        viewModel.observe(owner = this){
+        viewModel.observe(owner = viewLifecycleOwner){
             it.handle(binding=binding)
         }
 
