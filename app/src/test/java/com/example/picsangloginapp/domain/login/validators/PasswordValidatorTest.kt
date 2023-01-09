@@ -5,7 +5,8 @@ import org.junit.Test
 
 internal class PasswordValidatorTest {
 
-    private val validator = PasswordValidator(errorMessage = "stub")
+    private val validator =
+        com.best.login_feature.validators.PasswordValidator(errorMessage = "stub")
 
     @Test
     fun test_positive() {

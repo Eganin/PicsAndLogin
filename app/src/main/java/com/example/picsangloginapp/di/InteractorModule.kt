@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.di
 
-import com.example.picsangloginapp.domain.login.LoginInteractor
-import com.example.picsangloginapp.domain.login.LoginInteractorImpl
+import com.best.login_api.LoginInteractor
+import com.best.login_api.LoginInteractorImpl
 import com.example.picsangloginapp.domain.pics.PicsInteractor
 import com.example.picsangloginapp.domain.pics.PicsInteractorImpl
 import dagger.Binds
@@ -16,7 +16,7 @@ abstract class InteractorModule {
 
     @Binds
     @Singleton
-    abstract fun bindLoginInteractor(loginInteractorImpl: LoginInteractorImpl): LoginInteractor
+    abstract fun bindLoginInteractor(loginInteractorImpl: com.best.login_api.LoginInteractorImpl): com.best.login_api.LoginInteractor
 
     @Binds
     @Singleton

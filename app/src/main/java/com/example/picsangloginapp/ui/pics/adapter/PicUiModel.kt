@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.ui.pics.adapter
 
-import com.example.picsangloginapp.other.ImageContainer
-import com.example.picsangloginapp.other.TextContainer
+import com.best.core.other.ImageContainer
+import com.best.core.other.TextContainer
 
 abstract class PicUiModel(val type: PicUiModelType) {
     open fun show(textContainer: TextContainer) {}

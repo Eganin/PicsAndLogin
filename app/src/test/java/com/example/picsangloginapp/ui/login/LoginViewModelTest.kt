@@ -2,7 +2,7 @@ package com.example.picsangloginapp.ui.login
 
 import com.example.picsangloginapp.core.exception.ExceptionType
 import com.example.picsangloginapp.core.validation.UiValidator
-import com.example.picsangloginapp.domain.login.LoginInteractor
+import com.best.login_api.LoginInteractor
 import com.example.picsangloginapp.domain.login.WeatherItem
 import com.example.picsangloginapp.domain.login.WeatherUiMapper
 import com.example.picsangloginapp.ui.BaseUiTest
@@ -13,10 +13,10 @@ internal class LoginViewModelTest: BaseUiTest() {
 
     @Test
     fun test_both_empty() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val empty = FakeValidator(valid = false, message = "Input is empty")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -27,7 +27,7 @@ internal class LoginViewModelTest: BaseUiTest() {
 
         viewModel.login(email = "", password = "")
         assertThat(
-            LoginState.TwoErrors(
+            com.best.login_feature.LoginState.TwoErrors(
                 loginError = "Input is empty",
                 passwordError = "Input is empty"
             )
@@ -36,11 +36,11 @@ internal class LoginViewModelTest: BaseUiTest() {
 
     @Test
     fun test_empty_email_valid_password() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = false, message = "Input is empty")
         val password = FakeValidator(valid = true, message = "")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -50,16 +50,16 @@ internal class LoginViewModelTest: BaseUiTest() {
         )
 
         viewModel.login(email = "", password = "asdfASDF123")
-        assertThat(LoginState.LoginError(value = "Input is empty")).isEqualTo(communication.state())
+        assertThat(com.best.login_feature.LoginState.LoginError(value = "Input is empty")).isEqualTo(communication.state())
     }
 
     @Test
     fun test_invalid_email_valid_password() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = false, message = "Email is incorrect")
         val password = FakeValidator(valid = true, message = "")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -69,16 +69,16 @@ internal class LoginViewModelTest: BaseUiTest() {
         )
 
         viewModel.login(email = "succ", password = "asdfASDF123")
-        assertThat(LoginState.LoginError(value = "Email is incorrect")).isEqualTo(communication.state())
+        assertThat(com.best.login_feature.LoginState.LoginError(value = "Email is incorrect")).isEqualTo(communication.state())
     }
 
     @Test
     fun test_valid_email() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = true, message = "")
         val password = FakeValidator(valid = false, message = "Input is empty")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -87,17 +87,17 @@ internal class LoginViewModelTest: BaseUiTest() {
             dispatchers = TestDispatchersList()
         )
         viewModel.login(email = "erenjager@gmail.com", password = "")
-        assertThat(LoginState.PasswordError(value = "Input is empty")).isEqualTo(communication.state())
+        assertThat(com.best.login_feature.LoginState.PasswordError(value = "Input is empty")).isEqualTo(communication.state())
     }
 
     @Test
     fun test_password_invalid_length() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = true, message = "")
         val password =
             FakeValidator(valid = false, message = "Input should be at least 6 signs long")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -106,14 +106,14 @@ internal class LoginViewModelTest: BaseUiTest() {
             dispatchers = TestDispatchersList()
         )
         viewModel.login(email = "erenjager@gmail.com", password = "asdf")
-        assertThat(LoginState.PasswordError(value = "Input should be at least 6 signs long")).isEqualTo(
+        assertThat(com.best.login_feature.LoginState.PasswordError(value = "Input should be at least 6 signs long")).isEqualTo(
             communication.state()
         )
     }
 
     @Test
     fun test_password_invalid() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val email = FakeValidator(valid = true, message = "")
         val password =
@@ -121,7 +121,7 @@ internal class LoginViewModelTest: BaseUiTest() {
                 valid = false,
                 message = "Password should contain at least 1 lowercase letter, 1 uppercase letter and 1 digit"
             )
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -132,17 +132,17 @@ internal class LoginViewModelTest: BaseUiTest() {
         listOf("123456", "asdfgh", "ASDFGH", "!@#$%^&").forEach {
             viewModel.login(email = "erenjager@gmail.com", password = it)
             assertThat(
-                LoginState.PasswordError(value = "Password should contain at least 1 lowercase letter, 1 uppercase letter and 1 digit")
+                com.best.login_feature.LoginState.PasswordError(value = "Password should contain at least 1 lowercase letter, 1 uppercase letter and 1 digit")
             ).isEqualTo(communication.state())
         }
     }
 
     @Test
     fun test_input_valid_no_connection() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(item = WeatherItem.Error(ExceptionType.NETWORK_UNAVAILABLE))
         val valid = FakeValidator(valid = true, message = "")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = "Network is unavailable"),
@@ -153,8 +153,8 @@ internal class LoginViewModelTest: BaseUiTest() {
 
         viewModel.login(email = "erenjager@gmail.com", password = "asdfASDF1234")
         assertThat(communication.state()).isEqualTo(
-            LoginState.Error(
-                value = WeatherUiModel(
+            com.best.login_feature.LoginState.Error(
+                value = com.best.login_feature.WeatherUiModel(
                     description = "Network is unavailable",
                     isError = true
                 )
@@ -164,7 +164,7 @@ internal class LoginViewModelTest: BaseUiTest() {
 
     @Test
     fun test_input_valid() {
-        val communication = FakeCommunication.Base<LoginState>()
+        val communication = FakeCommunication.Base<com.best.login_feature.LoginState>()
         val interactor = FakeInteractor(
             item = WeatherItem.Basic(
                 description = "description",
@@ -173,7 +173,7 @@ internal class LoginViewModelTest: BaseUiTest() {
             )
         )
         val valid = FakeValidator(valid = true, message = "")
-        val viewModel = LoginViewModel(
+        val viewModel = com.best.login_feature.LoginViewModel(
             communication = communication,
             interactor = interactor,
             mapper = FakeMapper(error = ""),
@@ -183,22 +183,22 @@ internal class LoginViewModelTest: BaseUiTest() {
         )
         viewModel.login(email = "erenjager@gmail.com", password = "asdfASDF1234")
         assertThat(communication.state()).isEqualTo(
-            LoginState.Success(
-                value = WeatherUiModel(
+            com.best.login_feature.LoginState.Success(
+                value = com.best.login_feature.WeatherUiModel(
                     description = "description 18 20"
                 )
             )
         )
     }
 
-    private class FakeMapper(private val error: String) : WeatherUiMapper<WeatherUiModel> {
+    private class FakeMapper(private val error: String) : WeatherUiMapper<com.best.login_feature.WeatherUiModel> {
 
-        override fun map(feelsLike: Int, description: String, temp: Int): WeatherUiModel {
-            return WeatherUiModel(description = "$description $temp $feelsLike")
+        override fun map(feelsLike: Int, description: String, temp: Int): com.best.login_feature.WeatherUiModel {
+            return com.best.login_feature.WeatherUiModel(description = "$description $temp $feelsLike")
         }
 
-        override fun map(exceptionType: ExceptionType): WeatherUiModel {
-            return WeatherUiModel(error, isError = true)
+        override fun map(exceptionType: ExceptionType): com.best.login_feature.WeatherUiModel {
+            return com.best.login_feature.WeatherUiModel(error, isError = true)
         }
     }
 
@@ -212,7 +212,7 @@ internal class LoginViewModelTest: BaseUiTest() {
 
     private class FakeInteractor(
         private val item: WeatherItem
-    ) : LoginInteractor {
+    ) : com.best.login_api.LoginInteractor {
 
         override suspend fun login() = item
     }

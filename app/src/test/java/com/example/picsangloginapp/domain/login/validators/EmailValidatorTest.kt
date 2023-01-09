@@ -5,7 +5,7 @@ import org.junit.Test
 
 internal class EmailValidatorTest{
 
-    private val validator = EmailValidator(errorMessage = "stub")
+    private val validator = com.best.login_feature.validators.EmailValidator(errorMessage = "stub")
 
     @Test
     fun test_positive(){

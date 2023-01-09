@@ -1,8 +1,8 @@
 package com.example.picsangloginapp.di
 
-import com.example.picsangloginapp.data.login.LoginRepositoryImpl
+import com.best.login_impl.LoginRepositoryImpl
 import com.example.picsangloginapp.data.pics.PicsRepositoryImpl
-import com.example.picsangloginapp.domain.login.LoginRepository
+import com.best.login_api.LoginRepository
 import com.example.picsangloginapp.domain.pics.PicsRepository
 import dagger.Binds
 import dagger.Module
@@ -16,7 +16,7 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindLoginRepository(loginRepositoryImpl: LoginRepositoryImpl): LoginRepository
+    abstract fun bindLoginRepository(loginRepositoryImpl: com.best.login_impl.LoginRepositoryImpl): com.best.login_api.LoginRepository
 
     @Binds
     @Singleton

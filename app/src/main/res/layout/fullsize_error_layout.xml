@@ -5,14 +5,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.example.picsangloginapp.other.MyTextView
+    <com.best.core.other.MyTextView
         android:id="@+id/fullsize_error_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"
         android:text="@string/error_message_bottom" />
 
-    <com.example.picsangloginapp.other.MyButton
+    <com.best.core.other.MyButton
         android:id="@+id/fullsize_error_try_again_button"
         android:text="@string/try_again"
         android:layout_width="wrap_content"

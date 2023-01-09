@@ -5,7 +5,8 @@ import org.junit.Test
 
 internal class EmptinessValidatorTest{
 
-    private val validator = EmptinessValidator(errorMessage = "stub")
+    private val validator =
+        com.best.login_feature.validators.EmptinessValidator(errorMessage = "stub")
 
     @Test
     fun test_positive(){

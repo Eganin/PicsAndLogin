@@ -7,16 +7,16 @@ import com.best.core.mapper.Mapper
 import com.best.core.observer.ViewModelCommunication
 import com.best.core.resourcemanager.ResourceManager
 import com.best.core.validation.UiValidator
-import com.example.picsangloginapp.data.login.LoginService
-import com.example.picsangloginapp.data.login.WeatherDto
+import com.best.login_impl.LoginService
+import com.best.login_impl.WeatherDto
 import com.example.picsangloginapp.data.pics.PicDto
 import com.example.picsangloginapp.data.pics.PicsService
 import com.example.picsangloginapp.domain.login.WeatherItem
 import com.example.picsangloginapp.domain.login.WeatherUiMapper
 import com.example.picsangloginapp.domain.pics.PicItem
 import com.example.picsangloginapp.network.NetworkModule
-import com.example.picsangloginapp.ui.login.LoginState
-import com.example.picsangloginapp.ui.login.WeatherUiModel
+import com.best.login_feature.LoginState
+import com.best.login_feature.WeatherUiModel
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
 
 interface InstanceProvider : LoginInstancesProvider, PicsInstancesProvider {
@@ -29,13 +29,13 @@ interface InstanceProvider : LoginInstancesProvider, PicsInstancesProvider {
 
 interface LoginInstancesProvider : LoginUiInstanceProvider {
 
-    fun provideWeatherItemMapper(): Mapper<WeatherItem, WeatherDto>
-    fun provideLoginService(networkModule: NetworkModule): LoginService
+    fun provideWeatherItemMapper(): Mapper<WeatherItem, com.best.login_impl.WeatherDto>
+    fun provideLoginService(networkModule: NetworkModule): com.best.login_impl.LoginService
 }
 
 interface LoginUiInstanceProvider {
 
-    fun provideWeatherUiMapper(resourceManager: ResourceManager): WeatherUiMapper<WeatherUiModel>
+    fun provideWeatherUiMapper(resourceManager: ResourceManager): WeatherUiMapper<com.best.login_feature.WeatherUiModel>
     fun provideEmptyValidator(resourceManager: ResourceManager): UiValidator
     fun provideValidateEmail(
         resourceManager: ResourceManager,
@@ -47,7 +47,7 @@ interface LoginUiInstanceProvider {
         emptyValidator: UiValidator
     ): UiValidator
 
-    fun provideLoginCommunication(): ViewModelCommunication<LoginState>
+    fun provideLoginCommunication(): ViewModelCommunication<com.best.login_feature.LoginState>
 }
 
 interface PicsInstancesProvider : PicsUiInstanceProvider {

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="logo_url"><![CDATA[https://drive.google.com/u/0/uc?id=1fJGLqz7ynMLSiCiIZvFYuweW_Tc0wO8m&export=download]]></string>
+    <string name="weather_description">Погода сегодня: %s, температура: %d, ощущается как %d</string>
+</resources>

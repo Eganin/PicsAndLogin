@@ -12,19 +12,19 @@ import com.best.core.validation.UiValidator
 import com.best.core.validation.UiValidatorChain
 import com.example.picsangloginapp.R
 import com.example.picsangloginapp.network.NetworkModule
-import com.example.picsangloginapp.data.login.LoginService
-import com.example.picsangloginapp.data.login.WeatherDto
+import com.best.login_impl.LoginService
+import com.best.login_impl.WeatherDto
 import com.example.picsangloginapp.data.pics.PicDto
 import com.example.picsangloginapp.data.pics.PicsService
 import com.example.picsangloginapp.domain.login.*
-import com.example.picsangloginapp.domain.login.validators.EmailValidator
-import com.example.picsangloginapp.domain.login.validators.EmptinessValidator
-import com.example.picsangloginapp.domain.login.validators.MinLengthValidator
-import com.example.picsangloginapp.domain.login.validators.PasswordValidator
+import com.best.login_feature.validators.EmailValidator
+import com.best.login_feature.validators.EmptinessValidator
+import com.best.login_feature.validators.MinLengthValidator
+import com.best.login_feature.validators.PasswordValidator
 import com.example.picsangloginapp.domain.pics.*
-import com.example.picsangloginapp.ui.login.LoginState
-import com.example.picsangloginapp.ui.login.WeatherUiMapperImpl
-import com.example.picsangloginapp.ui.login.WeatherUiModel
+import com.best.login_feature.LoginState
+import com.best.login_feature.WeatherUiMapperImpl
+import com.best.login_feature.WeatherUiModel
 import com.example.picsangloginapp.ui.pics.PicsUiMapper
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
 import dagger.Module
@@ -50,13 +50,13 @@ object AppModule : InstanceProvider {
 
     @Singleton
     @Provides
-    override fun provideLoginService(networkModule: NetworkModule): LoginService =
+    override fun provideLoginService(networkModule: NetworkModule): com.best.login_impl.LoginService =
         networkModule.getLoginService()
 
     @Singleton
     @Provides
     override fun provideEmptyValidator(resourceManager: ResourceManager): UiValidator {
-        return EmptinessValidator(resourceManager.getString(R.string.empty_string_error_message))
+        return com.best.login_feature.validators.EmptinessValidator(resourceManager.getString(R.string.empty_string_error_message))
     }
 
     @Singleton
@@ -68,7 +68,11 @@ object AppModule : InstanceProvider {
     ): UiValidator {
         return UiValidatorChain(
             currentChain = emptyValidator,
-            nextChain = EmailValidator(errorMessage = resourceManager.getString(R.string.invalid_email_error_message))
+            nextChain = com.best.login_feature.validators.EmailValidator(
+                errorMessage = resourceManager.getString(
+                    R.string.invalid_email_error_message
+                )
+            )
         )
     }
 
@@ -83,20 +87,24 @@ object AppModule : InstanceProvider {
         return UiValidatorChain(
             currentChain = emptyValidator,
             nextChain = UiValidatorChain(
-                currentChain = MinLengthValidator(
+                currentChain = com.best.login_feature.validators.MinLengthValidator(
                     errorMessage = resourceManager.getString(
                         R.string.invalid_min_length_error_message,
                         max
                     ), minLength = max
                 ),
-                nextChain = PasswordValidator(errorMessage = resourceManager.getString(R.string.invalid_password_error_message))
+                nextChain = com.best.login_feature.validators.PasswordValidator(
+                    errorMessage = resourceManager.getString(
+                        R.string.invalid_password_error_message
+                    )
+                )
             )
         )
     }
 
     @Singleton
     @Provides
-    override fun provideLoginCommunication(): ViewModelCommunication<LoginState> {
+    override fun provideLoginCommunication(): ViewModelCommunication<com.best.login_feature.LoginState> {
         return ViewModelCommunication.Base()
     }
 
@@ -119,14 +127,14 @@ object AppModule : InstanceProvider {
 
     @Singleton
     @Provides
-    override fun provideWeatherItemMapper(): Mapper<WeatherItem, WeatherDto> {
-        return WeatherItemMapper()
+    override fun provideWeatherItemMapper(): Mapper<WeatherItem, com.best.login_impl.WeatherDto> {
+        return com.best.login_api.WeatherItemMapper()
     }
 
     @Singleton
     @Provides
-    override fun provideWeatherUiMapper(resourceManager: ResourceManager): WeatherUiMapper<WeatherUiModel> {
-        return WeatherUiMapperImpl(resourceManager = resourceManager)
+    override fun provideWeatherUiMapper(resourceManager: ResourceManager): WeatherUiMapper<com.best.login_feature.WeatherUiModel> {
+        return com.best.login_feature.WeatherUiMapperImpl(resourceManager = resourceManager)
     }
 
     @Singleton

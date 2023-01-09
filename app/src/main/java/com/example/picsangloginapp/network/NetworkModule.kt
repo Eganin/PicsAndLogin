@@ -1,6 +1,6 @@
 package com.example.picsangloginapp.network
 
-import com.example.picsangloginapp.data.login.LoginService
+import com.best.login_impl.LoginService
 import com.example.picsangloginapp.data.pics.PicsService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import javax.inject.Inject
 
-class NetworkModule @Inject constructor() {
+class NetworkModule {
 
     companion object {
         const val PICS_BASE_URL = "https://picsum.photos/v2/"

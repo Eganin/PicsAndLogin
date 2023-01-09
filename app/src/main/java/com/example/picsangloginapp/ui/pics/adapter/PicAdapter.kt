@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.picsangloginapp.R
-import com.example.picsangloginapp.other.inflate
+import com.best.core.other.inflate
 
 class PicAdapter(private val clickListener: PicsClickListener) :
     ListAdapter<PicUiModel, PicBaseViewHolder>(PicUiModelDiffUtilCallback()) {

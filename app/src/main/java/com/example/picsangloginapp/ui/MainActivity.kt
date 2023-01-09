@@ -1,16 +1,17 @@
 package com.example.picsangloginapp.ui
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import com.best.utils.NavCommand
+import com.best.utils.NavigationProvider
 import com.example.picsangloginapp.R
 import com.example.picsangloginapp.databinding.ActivityMainBinding
-import com.example.picsangloginapp.ui.login.LoginFragment
-import com.example.picsangloginapp.ui.pics.PicsFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationProvider {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -55,6 +56,18 @@ class MainActivity : AppCompatActivity() {
 //            binding.navView.selectedItemId == R.id.navigation_login
 //        )
 //    }
+
+    private val navController: NavController
+        get() = findNavController(R.id.nav_host_fragment)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    override fun launch(navCommand: NavCommand) {
+        TODO("Not yet implemented")
+    }
 
     private companion object {
         const val PICS_FRAGMENT_TAG = "picsFragment"
