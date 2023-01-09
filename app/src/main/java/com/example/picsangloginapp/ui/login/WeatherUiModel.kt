@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.ui.login
 
-import com.example.picsangloginapp.core.observer.ViewModelCommunication
-import com.example.picsangloginapp.core.other.TextContainer
+import com.best.core.observer.ViewModelCommunication
+import com.example.picsangloginapp.other.TextContainer
 
 data class WeatherUiModel(
     private val description: String,

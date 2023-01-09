@@ -4,10 +4,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.picsangloginapp.core.dispatchers.DispatchersList
-import com.example.picsangloginapp.core.mapper.Mapper
-import com.example.picsangloginapp.core.observer.Observe
-import com.example.picsangloginapp.core.observer.ViewModelCommunication
+import com.best.core.dispatchers.DispatchersList
+import com.best.core.mapper.Mapper
+import com.best.core.observer.Observe
+import com.best.core.observer.ViewModelCommunication
 import com.example.picsangloginapp.domain.pics.PicItem
 import com.example.picsangloginapp.domain.pics.PicsInteractor
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel

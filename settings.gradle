@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "PicsAngLoginApp"
 include ':app'
 include ':utils'
+include ':core'

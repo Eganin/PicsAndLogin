@@ -1,6 +1,7 @@
 package com.example.picsangloginapp.domain.login.validators
 
-import com.example.picsangloginapp.core.validation.UiValidator
+import com.best.core.validation.UiValidator
+
 
 open class MinLengthValidator(
     errorMessage: String,

@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.domain.pics
 
-import com.example.picsangloginapp.core.exception.ExceptionHandler
-import com.example.picsangloginapp.core.mapper.Mapper
+import com.best.core.exception.ExceptionHandler
+import com.best.core.mapper.Mapper
 import com.example.picsangloginapp.data.pics.PicDto
 import javax.inject.Inject
 

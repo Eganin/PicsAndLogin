@@ -1,8 +1,8 @@
 package com.example.picsangloginapp.ui.pics
 
-import com.example.picsangloginapp.core.exception.ExceptionType
-import com.example.picsangloginapp.core.mapper.Mapper
-import com.example.picsangloginapp.core.resourcemanager.ResourceManager
+import com.best.core.exception.ExceptionType
+import com.best.core.mapper.Mapper
+import com.best.core.resourcemanager.ResourceManager
 import com.example.picsangloginapp.domain.pics.PicItem
 import com.example.picsangloginapp.domain.pics.PicItemUiMapper
 import com.example.picsangloginapp.ui.pics.adapter.*

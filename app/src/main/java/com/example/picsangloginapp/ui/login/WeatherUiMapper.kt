@@ -1,8 +1,8 @@
 package com.example.picsangloginapp.ui.login
 
+import com.best.core.exception.ExceptionType
+import com.best.core.resourcemanager.ResourceManager
 import com.example.picsangloginapp.R
-import com.example.picsangloginapp.core.exception.ExceptionType
-import com.example.picsangloginapp.core.resourcemanager.ResourceManager
 import com.example.picsangloginapp.domain.login.WeatherUiMapper
 
 class WeatherUiMapperImpl(private val resourceManager: ResourceManager) :

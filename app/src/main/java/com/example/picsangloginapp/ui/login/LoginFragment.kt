@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.picsangloginapp.R
-import com.example.picsangloginapp.core.other.listenChanges
-import com.example.picsangloginapp.core.other.load
+import com.example.picsangloginapp.other.listenChanges
+import com.example.picsangloginapp.other.load
 import com.example.picsangloginapp.databinding.FragmentLayoutBinding
 import dagger.hilt.android.AndroidEntryPoint
 

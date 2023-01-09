@@ -1,6 +1,6 @@
 package com.example.picsangloginapp.domain.login
 
-import com.example.picsangloginapp.core.exception.ExceptionType
+import com.best.core.exception.ExceptionType
 
 sealed class WeatherItem {
     abstract fun <T> map(mapper: WeatherUiMapper<T>): T

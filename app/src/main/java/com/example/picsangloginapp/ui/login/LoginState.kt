@@ -1,6 +1,6 @@
 package com.example.picsangloginapp.ui.login
 
-import com.example.picsangloginapp.core.other.MySnackBar
+import com.example.picsangloginapp.other.MySnackBar
 import com.example.picsangloginapp.databinding.FragmentLayoutBinding
 import com.google.android.material.snackbar.Snackbar
 

@@ -1,6 +1,6 @@
 package com.example.picsangloginapp.domain.pics
 
-import com.example.picsangloginapp.core.exception.ExceptionType
+import com.best.core.exception.ExceptionType
 
 sealed class PicItem {
     abstract fun <T> map(mapper: PicItemUiMapper<T>): T

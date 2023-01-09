@@ -4,10 +4,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.picsangloginapp.core.dispatchers.DispatchersList
-import com.example.picsangloginapp.core.observer.Observe
-import com.example.picsangloginapp.core.observer.ViewModelCommunication
-import com.example.picsangloginapp.core.validation.UiValidator
+import com.best.core.dispatchers.DispatchersList
+import com.best.core.observer.Observe
+import com.best.core.observer.ViewModelCommunication
+import com.best.core.validation.UiValidator
 import com.example.picsangloginapp.di.EmailValidation
 import com.example.picsangloginapp.di.PasswordValidation
 import com.example.picsangloginapp.domain.login.LoginInteractor

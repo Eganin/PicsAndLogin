@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="network_exception">Network is unavailable</string>
+    <string name="some_exception">Something went wrong</string>
+</resources>

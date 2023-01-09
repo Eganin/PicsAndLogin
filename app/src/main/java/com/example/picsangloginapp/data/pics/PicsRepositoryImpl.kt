@@ -1,6 +1,6 @@
 package com.example.picsangloginapp.data.pics
 
-import com.example.picsangloginapp.core.other.stringSuspending
+import com.example.picsangloginapp.other.stringSuspending
 import com.example.picsangloginapp.domain.pics.PicsRepository
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

@@ -1,9 +1,9 @@
 package com.example.picsangloginapp.domain.login
 
-import com.example.picsangloginapp.core.mapper.Mapper
+import com.best.core.mapper.Mapper
 import com.example.picsangloginapp.data.login.WeatherDto
 
-class WeatherItemMapper : Mapper<WeatherItem, WeatherDto>{
+class WeatherItemMapper : Mapper<WeatherItem, WeatherDto> {
 
     override fun map(source: WeatherDto)= when{
         source.weatherInnerDto.isEmpty() -> WeatherItem.Error()

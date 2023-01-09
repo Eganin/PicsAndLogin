@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.domain.login.validators
 
 import androidx.core.util.PatternsCompat
-import com.example.picsangloginapp.core.validation.UiValidator
+import com.best.core.validation.UiValidator
 
 class EmailValidator(errorMessage: String) : UiValidator.Abstract(errorMessage){
     override fun isValid(text: String): Boolean {
