@@ -4,9 +4,9 @@ import com.best.core.exception.ExceptionHandler
 import com.best.login_api.LoginInteractor
 import com.best.login_api.LoginRepository
 import com.best.login_api.WeatherItem
-import javax.inject.Inject
 
-class LoginInteractorImpl @Inject constructor(
+
+class LoginInteractorImpl(
     private val repository: LoginRepository,
     private val exceptionHandler: ExceptionHandler
 ) : LoginInteractor {
