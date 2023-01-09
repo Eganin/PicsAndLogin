@@ -42,6 +42,9 @@ dependencies {
 
     implementation(project(":utils"))
     implementation(project(":core"))
+    implementation(project(":login-api"))
+    implementation(project(":login-impl"))
+    implementation(project(":login-feature"))
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
