@@ -6,12 +6,12 @@ import com.best.login_api.di.LoginScope
 import dagger.Component
 
 @Component(
-    modules = [LoginModule::class,NetworkModule::class],
+    modules = [LoginModule::class, NetworkModule::class],
     dependencies = [CoreComponent::class]
 )
 @LoginScope
-interface LoginComponentImpl: LoginComponent {
+interface LoginComponentImpl : LoginComponent {
 
     @Component.Builder
-    interface Builder: LoginComponent.Builder
+    interface Builder : LoginComponent.Builder
 }

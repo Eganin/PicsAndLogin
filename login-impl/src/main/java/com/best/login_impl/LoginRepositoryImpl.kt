@@ -5,7 +5,7 @@ import com.best.login_api.LoginRepository
 import com.best.login_api.WeatherItem
 import javax.inject.Inject
 
-class LoginRepositoryImpl(
+class LoginRepositoryImpl @Inject constructor(
     private val service: LoginService,
     private val mapper: Mapper<WeatherItem, WeatherDto>,
 ) : LoginRepository {
