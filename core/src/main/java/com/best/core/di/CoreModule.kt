@@ -2,15 +2,18 @@ package com.best.core.di
 
 import android.app.Application
 import android.content.Context
+import androidx.lifecycle.ViewModelProvider
+import com.best.core.di.viewmodel.ViewModelFactory
 import com.best.core.dispatchers.DispatchersList
 import com.best.core.exception.ExceptionHandler
 import com.best.core.exception.ExceptionHandlerImpl
 import com.best.core.resourcemanager.ResourceManager
 import com.best.core.resourcemanager.ResourceManagerImpl
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
-@Module
+@Module(includes = [])
 class CoreModule {
 
     @CoreScope
@@ -29,4 +32,11 @@ class CoreModule {
     @Provides
     internal fun provideResourceManager(context: Context): ResourceManager =
         ResourceManagerImpl(context = context)
+
+    @Module
+    interface BindsModule {
+        @CoreScope
+        @Binds
+        fun provideViewModelFactory(commonViewModelFactory: ViewModelFactory): ViewModelProvider.Factory
+    }
 }

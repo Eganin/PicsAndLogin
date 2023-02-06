@@ -1,6 +1,8 @@
 package com.best.login_feature.di
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.best.core.di.viewmodel.ViewModelFactory
 import com.best.core.di.viewmodel.ViewModelKey
 import com.best.core.observer.ViewModelCommunication
 import com.best.core.resourcemanager.ResourceManager
@@ -33,9 +35,8 @@ class LoginFeatureModule {
 
     @LoginFeatureScope
     @Provides
-    fun provideEmptyValidator(resourceManager: ResourceManager): UiValidator {
-        return EmptinessValidator(resourceManager.getString(R.string.empty_string_error_message))
-    }
+    fun provideEmptyValidator(resourceManager: ResourceManager): UiValidator =
+        EmptinessValidator(resourceManager.getString(R.string.empty_string_error_message))
 
     @LoginFeatureScope
     @Provides
@@ -69,8 +70,8 @@ class LoginFeatureModule {
     fun provideValidateEmail(
         resourceManager: ResourceManager,
         emptyValidator: UiValidator
-    ): UiValidator {
-        return UiValidatorChain(
+    ): UiValidator =
+        UiValidatorChain(
             currentChain = emptyValidator,
             nextChain = com.best.login_feature.validators.EmailValidator(
                 errorMessage = resourceManager.getString(
@@ -78,7 +79,6 @@ class LoginFeatureModule {
                 )
             )
         )
-    }
 
     @Module
     interface BindsModule {
@@ -86,5 +86,9 @@ class LoginFeatureModule {
         @IntoMap
         @ViewModelKey(LoginViewModel::class)
         fun bindLoginViewModel(viewModel: LoginViewModel): ViewModel
+
+        @Binds
+        @LoginFeatureScope
+        fun provideViewModelFactory(vmFactory: ViewModelFactory): ViewModelProvider.Factory
     }
 }

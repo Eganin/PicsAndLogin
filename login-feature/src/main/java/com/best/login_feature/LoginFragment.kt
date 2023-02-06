@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.best.core.other.listenChanges
 import com.best.core.other.load
-import com.example.picsangloginapp.databinding.FragmentLayoutBinding
+import com.best.login_feature.databinding.FragmentLayoutBinding
 
 class LoginFragment : Fragment() {
 
