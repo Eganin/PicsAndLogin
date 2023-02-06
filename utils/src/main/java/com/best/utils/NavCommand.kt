@@ -6,5 +6,5 @@ import androidx.navigation.NavOptions
 data class NavCommand(
     val target: NavCommands,
     val args: Bundle? = null,
-    val navOptions: NavOptions?
+    val navOptions: NavOptions?=null
 )

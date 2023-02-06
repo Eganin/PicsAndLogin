@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_login">
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/loginFragment">
 
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.best.login_feature.LoginFragment"
+        android:label="LoginFragment" />
+
+    <deepLink app:uri="loginandpicsapp://login" />
 </navigation>

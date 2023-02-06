@@ -1,7 +1,7 @@
 package com.best.login_feature
 
 import com.best.core.other.MySnackBar
-import com.example.picsangloginapp.databinding.FragmentLayoutBinding
+import com.best.login_feature.databinding.FragmentLayoutBinding
 import com.google.android.material.snackbar.Snackbar
 
 sealed class LoginState {
