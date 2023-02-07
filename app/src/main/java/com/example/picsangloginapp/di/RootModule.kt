@@ -8,10 +8,9 @@ import com.best.core.exception.ExceptionHandler
 import com.best.core.mapper.Mapper
 import com.best.core.observer.ViewModelCommunication
 import com.best.core.resourcemanager.ResourceManager
+import com.example.pics_api.*
+import com.example.pics_impl.*
 import com.example.picsangloginapp.data.RootInteractorImpl
-import com.example.picsangloginapp.data.pics.PicDto
-import com.example.picsangloginapp.data.pics.PicsRepositoryImpl
-import com.example.picsangloginapp.data.pics.PicsService
 import com.example.picsangloginapp.domain.RootInteractor
 import com.example.picsangloginapp.domain.pics.*
 import com.example.picsangloginapp.ui.pics.PicsUiMapper

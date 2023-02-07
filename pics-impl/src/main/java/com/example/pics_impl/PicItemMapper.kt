@@ -1,7 +1,7 @@
-package com.example.picsangloginapp.domain.pics
+package com.example.pics_impl
 
 import com.best.core.mapper.Mapper
-import com.example.picsangloginapp.data.pics.PicDto
+import com.example.pics_api.PicItem
 
 class PicItemMapper : Mapper<List<PicItem>, List<PicDto>> {
 

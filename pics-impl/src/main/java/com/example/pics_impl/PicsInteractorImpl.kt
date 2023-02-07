@@ -1,8 +1,10 @@
-package com.example.picsangloginapp.domain.pics
+package com.example.pics_impl
 
 import com.best.core.exception.ExceptionHandler
 import com.best.core.mapper.Mapper
-import com.example.picsangloginapp.data.pics.PicDto
+import com.example.pics_api.PicItem
+import com.example.pics_api.PicsInteractor
+import com.example.pics_api.PicsRepository
 import javax.inject.Inject
 
 class PicsInteractorImpl @Inject constructor(

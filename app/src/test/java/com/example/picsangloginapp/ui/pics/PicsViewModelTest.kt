@@ -2,8 +2,8 @@ package com.example.picsangloginapp.ui.pics
 
 import com.best.core.exception.ExceptionType
 import com.best.core.resourcemanager.TestResourceManager
-import com.example.picsangloginapp.domain.pics.PicItem
-import com.example.picsangloginapp.domain.pics.PicsInteractor
+import com.example.pics_api.PicItem
+import com.example.pics_api.PicsInteractor
 import com.example.picsangloginapp.ui.BaseUiTest
 import com.example.picsangloginapp.ui.pics.adapter.*
 import com.google.common.truth.Truth.assertThat

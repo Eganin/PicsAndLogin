@@ -2,7 +2,11 @@ package com.example.picsangloginapp.domain.pics
 
 import com.best.core.exception.ExceptionHandler
 import com.best.core.exception.ExceptionHandlerImpl
-import com.example.picsangloginapp.data.pics.PicDto
+import com.example.pics_api.PicItem
+import com.example.pics_impl.PicItemMapper
+import com.example.pics_impl.PicsInteractorImpl
+import com.example.pics_api.PicsRepository
+import com.example.pics_impl.PicDto
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest

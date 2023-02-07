@@ -1,4 +1,4 @@
-package com.example.picsangloginapp.data.pics
+package com.example.pics_impl
 
 import com.google.gson.annotations.SerializedName
 

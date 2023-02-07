@@ -1,4 +1,4 @@
-package com.example.picsangloginapp.data.pics
+package com.example.pics_api
 
 import okhttp3.ResponseBody
 import retrofit2.http.GET

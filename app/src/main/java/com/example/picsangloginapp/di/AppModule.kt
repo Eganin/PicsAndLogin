@@ -14,8 +14,8 @@ package com.example.picsangloginapp.di
 //import com.example.picsangloginapp.network.NetworkModule
 //import com.best.login_impl.LoginService
 //import com.best.login_impl.WeatherDto
-//import com.example.picsangloginapp.data.pics.PicDto
-//import com.example.picsangloginapp.data.pics.PicsService
+//import com.example.pics_impl.PicDto
+//import com.example.pics_api.PicsService
 //import com.example.picsangloginapp.domain.login.*
 //import com.best.login_feature.validators.EmailValidator
 //import com.best.login_feature.validators.EmptinessValidator

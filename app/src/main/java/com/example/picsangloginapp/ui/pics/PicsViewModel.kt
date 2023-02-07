@@ -8,8 +8,8 @@ import com.best.core.dispatchers.DispatchersList
 import com.best.core.mapper.Mapper
 import com.best.core.observer.Observe
 import com.best.core.observer.ViewModelCommunication
-import com.example.picsangloginapp.domain.pics.PicItem
-import com.example.picsangloginapp.domain.pics.PicsInteractor
+import com.example.pics_api.PicItem
+import com.example.pics_api.PicsInteractor
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

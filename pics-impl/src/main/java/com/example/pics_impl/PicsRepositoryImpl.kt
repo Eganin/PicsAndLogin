@@ -1,6 +1,7 @@
-package com.example.picsangloginapp.data.pics
+package com.example.pics_impl
 
 import com.best.core.other.stringSuspending
+import com.example.pics_api.PicsService
 import com.example.picsangloginapp.domain.pics.PicsRepository
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

@@ -1,4 +1,4 @@
-package com.example.picsangloginapp.domain.pics
+package com.example.pics_api
 
 interface PicsInteractor {
 
