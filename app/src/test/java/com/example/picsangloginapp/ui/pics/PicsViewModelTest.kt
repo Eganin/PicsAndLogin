@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.ui.pics
 
-import com.example.picsangloginapp.core.exception.ExceptionType
-import com.example.picsangloginapp.core.resourcemanager.TestResourceManager
+import com.best.core.exception.ExceptionType
+import com.best.core.resourcemanager.TestResourceManager
 import com.example.picsangloginapp.domain.pics.PicItem
 import com.example.picsangloginapp.domain.pics.PicsInteractor
 import com.example.picsangloginapp.ui.BaseUiTest

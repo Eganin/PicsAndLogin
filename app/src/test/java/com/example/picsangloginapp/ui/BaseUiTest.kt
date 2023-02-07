@@ -2,8 +2,8 @@ package com.example.picsangloginapp.ui
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import com.example.picsangloginapp.core.dispatchers.DispatchersList
-import com.example.picsangloginapp.core.observer.ViewModelCommunication
+import com.best.core.dispatchers.DispatchersList
+import com.best.core.observer.ViewModelCommunication
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 
@@ -17,11 +17,11 @@ internal open class BaseUiTest {
         override fun ui() = dispatcher
     }
 
-    interface FakeCommunication <T> : ViewModelCommunication<T> {
+    interface FakeCommunication<T> : ViewModelCommunication<T> {
 
         fun state(): T
 
-        class Base <T> : FakeCommunication<T> {
+        class Base<T> : FakeCommunication<T> {
 
             private var state: T? = null
 

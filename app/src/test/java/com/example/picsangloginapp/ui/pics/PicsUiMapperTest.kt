@@ -1,7 +1,7 @@
 package com.example.picsangloginapp.ui.pics
 
-import com.example.picsangloginapp.core.exception.ExceptionType
-import com.example.picsangloginapp.core.resourcemanager.TestResourceManager
+import com.best.core.exception.ExceptionType
+import com.best.core.resourcemanager.TestResourceManager
 import com.example.picsangloginapp.domain.pics.PicItem
 import com.example.picsangloginapp.ui.pics.adapter.*
 import com.google.common.truth.Truth.assertThat
@@ -31,17 +31,17 @@ internal class PicsUiMapperTest {
     }
 
     @Test
-    fun test_empty_result(){
+    fun test_empty_result() {
         val sourceList = emptyList<PicItem>()
 
-        val result = mapper.map(source=sourceList)
+        val result = mapper.map(source = sourceList)
         val expected = listOf(FullSizeLoader)
 
         assertThat(result).isEqualTo(expected)
     }
 
     @Test
-    fun test_last_error(){
+    fun test_last_error() {
         val sourceList = listOf(
             PicItem.Base(text = "stub", url = "https:/google.com"),
             PicItem.Base(text = "stub", url = "https:/google.com"),
@@ -61,7 +61,7 @@ internal class PicsUiMapperTest {
     }
 
     @Test
-    fun test_single_error(){
+    fun test_single_error() {
         val sourceList = listOf(PicItem.Error())
 
         val result = mapper.map(source = sourceList)

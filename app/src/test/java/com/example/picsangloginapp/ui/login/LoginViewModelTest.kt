@@ -1,15 +1,15 @@
 package com.example.picsangloginapp.ui.login
 
-import com.example.picsangloginapp.core.exception.ExceptionType
-import com.example.picsangloginapp.core.validation.UiValidator
-import com.best.login_api.LoginInteractor
-import com.example.picsangloginapp.domain.login.WeatherItem
-import com.example.picsangloginapp.domain.login.WeatherUiMapper
+import com.best.core.exception.ExceptionType
+import com.best.core.validation.UiValidator
+import com.best.login_api.WeatherItem
+import com.best.login_api.WeatherUiMapper
+import com.best.login_feature.WeatherUiModel
 import com.example.picsangloginapp.ui.BaseUiTest
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
-internal class LoginViewModelTest: BaseUiTest() {
+internal class LoginViewModelTest : BaseUiTest() {
 
     @Test
     fun test_both_empty() {
@@ -50,7 +50,9 @@ internal class LoginViewModelTest: BaseUiTest() {
         )
 
         viewModel.login(email = "", password = "asdfASDF123")
-        assertThat(com.best.login_feature.LoginState.LoginError(value = "Input is empty")).isEqualTo(communication.state())
+        assertThat(com.best.login_feature.LoginState.LoginError(value = "Input is empty")).isEqualTo(
+            communication.state()
+        )
     }
 
     @Test
@@ -69,7 +71,9 @@ internal class LoginViewModelTest: BaseUiTest() {
         )
 
         viewModel.login(email = "succ", password = "asdfASDF123")
-        assertThat(com.best.login_feature.LoginState.LoginError(value = "Email is incorrect")).isEqualTo(communication.state())
+        assertThat(com.best.login_feature.LoginState.LoginError(value = "Email is incorrect")).isEqualTo(
+            communication.state()
+        )
     }
 
     @Test
@@ -87,7 +91,9 @@ internal class LoginViewModelTest: BaseUiTest() {
             dispatchers = TestDispatchersList()
         )
         viewModel.login(email = "erenjager@gmail.com", password = "")
-        assertThat(com.best.login_feature.LoginState.PasswordError(value = "Input is empty")).isEqualTo(communication.state())
+        assertThat(com.best.login_feature.LoginState.PasswordError(value = "Input is empty")).isEqualTo(
+            communication.state()
+        )
     }
 
     @Test
@@ -191,9 +197,14 @@ internal class LoginViewModelTest: BaseUiTest() {
         )
     }
 
-    private class FakeMapper(private val error: String) : WeatherUiMapper<com.best.login_feature.WeatherUiModel> {
+    private class FakeMapper(private val error: String) :
+        WeatherUiMapper<WeatherUiModel> {
 
-        override fun map(feelsLike: Int, description: String, temp: Int): com.best.login_feature.WeatherUiModel {
+        override fun map(
+            feelsLike: Int,
+            description: String,
+            temp: Int
+        ): com.best.login_feature.WeatherUiModel {
             return com.best.login_feature.WeatherUiModel(description = "$description $temp $feelsLike")
         }
 
