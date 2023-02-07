@@ -13,7 +13,7 @@ class PicAdapter(private val clickListener: PicsClickListener) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PicBaseViewHolder =
         when (viewType) {
             PicUiModelType.BASIC.ordinal -> PicViewHolder(
-                parent.inflate(R.layout.pic_view_holder)
+                parent.inflate(R.layout.pic_view_holder), clickListener
             )
             PicUiModelType.FULL_SIZE_LOADER.ordinal -> FullSizeLoaderViewHolder(
                 parent.inflate(R.layout.fullsize_loader_layout), clickListener

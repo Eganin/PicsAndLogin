@@ -8,4 +8,5 @@
         android:id="@+id/mainFragment"
         android:name="com.example.picsangloginapp.ui.MainFragment"
         android:label="MainFragment" />
+    <include app:graph="@navigation/nav_graph_menu" />
 </navigation>

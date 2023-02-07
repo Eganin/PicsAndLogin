@@ -17,6 +17,10 @@
             <option value="$PROJECT_DIR$/login-feature" />
             <option value="$PROJECT_DIR$/login-impl" />
             <option value="$PROJECT_DIR$/login-provider" />
+            <option value="$PROJECT_DIR$/pics-api" />
+            <option value="$PROJECT_DIR$/pics-feature" />
+            <option value="$PROJECT_DIR$/pics-impl" />
+            <option value="$PROJECT_DIR$/pics-provider" />
             <option value="$PROJECT_DIR$/utils" />
           </set>
         </option>

@@ -7,10 +7,15 @@
     <fragment
         android:id="@+id/picsFragment"
         android:name="com.example.pics_feature.PicsFragment"
-        android:label="PicsFragment" />
+        android:label="PicsFragment">
+        <deepLink app:uri="picandloginapp://pics" />
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.best.login_feature.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment">
+
+        <deepLink app:uri="picandloginapp://login" />
+    </fragment>
 </navigation>

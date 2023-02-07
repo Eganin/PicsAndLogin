@@ -1,5 +1,6 @@
 package com.example.pics_feature
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.best.core.di.viewmodel.VmFactoryWrapper
+import com.best.utils.NavCommand
+import com.best.utils.NavCommands
+import com.best.utils.navigate
 import com.example.pics_feature.adapter.PicAdapter
 import com.example.pics_feature.adapter.PicsClickListener
 import com.example.pics_feature.databinding.FragmentPicsBinding
@@ -76,5 +80,16 @@ class PicsFragment : Fragment(), PicsClickListener {
 
     override fun tryLoadMoreDataAgain() {
         viewModel.loadData()
+    }
+
+    override fun onClick() {
+        navigate(
+            navCommand = NavCommand(
+                target = NavCommands.DeepLink(
+                    uri = Uri.parse("picandloginapp://login"),
+                    isModal = true,
+                )
+            )
+        )
     }
 }

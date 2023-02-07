@@ -1,13 +1,13 @@
 package com.example.picsangloginapp.ui
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.best.core.di.viewmodel.VmFactoryWrapper
 import com.best.utils.NavCommand
 import com.best.utils.NavCommands
 import com.best.utils.NavigationProvider
@@ -34,8 +34,23 @@ class MainActivity : AppCompatActivity(), NavigationProvider {
                 isModal = target.isModal,
                 isSingleTop = target.isSingleTop
             )
-            else -> {}
-            //is NavCommands.Browser -> openBrowser(url = target.url)
+            is NavCommands.Browser -> openBrowser(url = target.url)
+        }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        navController.handleDeepLink(intent = intent)
+    }
+
+    private fun openBrowser(url: String) {
+        val browserIntent =
+            Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply { setPackage("com.android.chrome") }
+        try {
+            this.startActivity(browserIntent)
+        } catch (ex: ActivityNotFoundException) {
+            browserIntent.setPackage(null)
+            this.startActivity(browserIntent)
         }
     }
 

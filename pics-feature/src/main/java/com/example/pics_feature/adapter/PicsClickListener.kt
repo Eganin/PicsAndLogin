@@ -7,4 +7,6 @@ interface PicsClickListener {
     fun tryLoadDataAgain()
 
     fun tryLoadMoreDataAgain()
+
+    fun onClick()
 }

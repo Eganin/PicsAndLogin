@@ -11,9 +11,11 @@ abstract class PicBaseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     open fun onBind(model: PicUiModel) {}
 }
 
-class PicViewHolder(view: View) : PicBaseViewHolder(view) {
+class PicViewHolder(private val view: View, private val clickListener: PicsClickListener) :
+    PicBaseViewHolder(view) {
     private val binding = PicViewHolderBinding.bind(view)
     override fun onBind(model: PicUiModel) = with(binding) {
+        view.setOnClickListener { clickListener.onClick() }
         model.show(textContainer = picDescriptionTv, imageContainer = picImageView)
     }
 }
