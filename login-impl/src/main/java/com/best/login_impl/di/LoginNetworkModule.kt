@@ -1,7 +1,7 @@
 package com.best.login_impl.di
 
+import com.best.login_api.LoginService
 import com.best.login_api.di.LoginScope
-import com.best.login_impl.LoginService
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -11,11 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 @Module
-internal class NetworkModule {
+internal class LoginNetworkModule {
 
     @LoginScope
     @Provides
-    internal fun provideGsonConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
+    fun provideGsonConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
 
     @LoginScope
     @Provides
@@ -40,10 +40,14 @@ internal class NetworkModule {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl(LoginModule.LOGIN_BASE_URL)
+            .baseUrl(LOGIN_BASE_URL)
             .addConverterFactory(gsonConverterFactory)
             .client(loginClient)
             .build()
             .create()
+    }
+
+    companion object {
+        private const val LOGIN_BASE_URL = "https://api.openweathermap.org/data/2.5/"
     }
 }

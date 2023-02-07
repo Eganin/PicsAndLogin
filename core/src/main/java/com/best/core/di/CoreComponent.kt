@@ -10,6 +10,7 @@ import com.best.core.resourcemanager.ResourceManagerImpl
 import dagger.BindsInstance
 import dagger.Component
 import dagger.Provides
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Component(
     modules = [CoreModule::class]

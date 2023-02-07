@@ -6,7 +6,7 @@ import com.best.login_api.di.LoginScope
 import dagger.Component
 
 @Component(
-    modules = [LoginModule::class, NetworkModule::class],
+    modules = [LoginModule::class, LoginNetworkModule::class],
     dependencies = [CoreComponent::class]
 )
 @LoginScope

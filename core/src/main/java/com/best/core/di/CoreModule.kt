@@ -12,8 +12,9 @@ import com.best.core.resourcemanager.ResourceManagerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import retrofit2.converter.gson.GsonConverterFactory
 
-@Module(includes = [])
+@Module
 class CoreModule {
 
     @CoreScope
@@ -32,11 +33,4 @@ class CoreModule {
     @Provides
     internal fun provideResourceManager(context: Context): ResourceManager =
         ResourceManagerImpl(context = context)
-
-    @Module
-    interface BindsModule {
-        @CoreScope
-        @Binds
-        fun provideViewModelFactory(commonViewModelFactory: ViewModelFactory): ViewModelProvider.Factory
-    }
 }

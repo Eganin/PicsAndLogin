@@ -9,13 +9,12 @@ import javax.inject.Inject
 
 class PicsInteractorImpl @Inject constructor(
     private val repository: PicsRepository,
-    private val mapper: Mapper<List<PicItem>, List<PicDto>>,
     private val exceptionHandler: ExceptionHandler
 ) : PicsInteractor {
-    override fun getInitialData() = mapper.map(source = repository.getCachedData())
+    override fun getInitialData() = repository.getCachedData()
 
     override suspend fun getData() = try {
-        mapper.map(source = repository.getData())
+        repository.getData()
     } catch (e: Exception) {
         mutableListOf<PicItem>().apply {
             addAll(getInitialData())

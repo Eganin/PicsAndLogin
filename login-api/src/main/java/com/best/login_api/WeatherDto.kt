@@ -1,4 +1,4 @@
-package com.best.login_impl
+package com.best.login_api
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.best.login_impl
+package com.best.login_api
 
 import retrofit2.http.GET
 import retrofit2.http.Query

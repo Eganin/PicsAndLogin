@@ -1,10 +1,10 @@
 package com.example.picsangloginapp.domain.login
 
 import com.best.login_api.WeatherItem
-import com.best.login_impl.WeatherDto
-import com.best.login_impl.WeatherInnerDto
+import com.best.login_api.WeatherDto
+import com.best.login_api.WeatherInnerDto
 import com.best.login_impl.WeatherItemMapper
-import com.best.login_impl.WeatherMainInfoDto
+import com.best.login_api.WeatherMainInfoDto
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 

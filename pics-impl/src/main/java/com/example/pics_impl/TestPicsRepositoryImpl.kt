@@ -1,21 +1,25 @@
 package com.example.pics_impl
 
-import com.example.picsangloginapp.domain.pics.PicsRepository
+import com.best.core.mapper.Mapper
+import com.example.pics_api.PicItem
+import com.example.pics_api.PicsRepository
 import java.net.UnknownHostException
 
-class TestPicsRepositoryImpl : PicsRepository {
+class TestPicsRepositoryImpl(
+    private val mapper: Mapper<List<PicItem>, List<PicDto>>
+) : PicsRepository {
 
     private val dataList = mutableListOf<PicDto>()
 
     private var count = -1
 
-    override fun getCachedData() = dataList
+    override fun getCachedData() = mapper.map(source=dataList)
 
-    override suspend fun getData(): List<PicDto> {
+    override suspend fun getData(): List<PicItem> {
         count++
         if (count % 3 == 0) throw UnknownHostException()
         dataList.addAll(generateList())
-        return dataList
+        return mapper.map(source = dataList)
     }
 
     private fun generateList(): List<PicDto> {

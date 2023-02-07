@@ -2,9 +2,7 @@ package com.best.login_impl.di
 
 import com.best.core.exception.ExceptionHandler
 import com.best.core.mapper.Mapper
-import com.best.login_api.LoginInteractor
-import com.best.login_api.LoginRepository
-import com.best.login_api.WeatherItem
+import com.best.login_api.*
 import com.best.login_api.di.LoginScope
 import com.best.login_impl.*
 import dagger.Module
@@ -34,8 +32,4 @@ internal class LoginModule {
         service: LoginService,
         mapper: Mapper<WeatherItem, WeatherDto>
     ): LoginRepository = LoginRepositoryImpl(service = service, mapper = mapper)
-
-    companion object {
-        const val LOGIN_BASE_URL = "https://api.openweathermap.org/data/2.5/"
-    }
 }

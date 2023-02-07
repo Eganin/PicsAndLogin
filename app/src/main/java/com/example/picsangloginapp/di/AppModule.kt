@@ -12,8 +12,8 @@ package com.example.picsangloginapp.di
 //import com.best.core.validation.UiValidatorChain
 //import com.example.picsangloginapp.R
 //import com.example.picsangloginapp.network.NetworkModule
-//import com.best.login_impl.LoginService
-//import com.best.login_impl.WeatherDto
+//import com.best.login_api.LoginService
+//import com.best.login_api.WeatherDto
 //import com.example.pics_impl.PicDto
 //import com.example.pics_api.PicsService
 //import com.example.picsangloginapp.domain.login.*
@@ -50,7 +50,7 @@ package com.example.picsangloginapp.di
 //
 //    @Singleton
 //    @Provides
-//    override fun provideLoginService(networkModule: NetworkModule): com.best.login_impl.LoginService =
+//    override fun provideLoginService(networkModule: NetworkModule): com.best.login_api.LoginService =
 //        networkModule.getLoginService()
 //
 //    @Singleton
