@@ -16,7 +16,7 @@ class NetworkModule {
         const val LOGIN_BASE_URL = "https://api.openweathermap.org/data/2.5/"
     }
 
-    private val converterFactory = GsonConverterFactory.create()
+    private val converterFactory : GsonConverterFactory= GsonConverterFactory.create()
 
     fun getPicsService(): PicsService = Retrofit.Builder()
         .baseUrl(PICS_BASE_URL)

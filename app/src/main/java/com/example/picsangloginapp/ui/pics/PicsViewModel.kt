@@ -11,11 +11,9 @@ import com.best.core.observer.ViewModelCommunication
 import com.example.picsangloginapp.domain.pics.PicItem
 import com.example.picsangloginapp.domain.pics.PicsInteractor
 import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
 class PicsViewModel @Inject constructor(
     private val communication: ViewModelCommunication<List<PicUiModel>>,
     private val interactor: PicsInteractor,

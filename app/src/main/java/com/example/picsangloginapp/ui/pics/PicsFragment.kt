@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.picsangloginapp.databinding.FragmentPicsBinding
 import com.example.picsangloginapp.ui.pics.adapter.PicAdapter
 import com.example.picsangloginapp.ui.pics.adapter.PicsClickListener
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class PicsFragment : Fragment(), PicsClickListener {
 
     private var _binding: FragmentPicsBinding? = null
