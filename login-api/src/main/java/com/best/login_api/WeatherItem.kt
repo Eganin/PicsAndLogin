@@ -2,6 +2,12 @@ package com.best.login_api
 
 import com.best.core.exception.ExceptionType
 
+interface WeatherUiMapper<T> {
+
+    fun map(feelsLike: Int, description: String, temp: Int): T
+
+    fun map(exceptionType: ExceptionType): T
+}
 
 sealed class WeatherItem {
     abstract fun <T> map(mapper: WeatherUiMapper<T>): T
@@ -19,11 +25,4 @@ sealed class WeatherItem {
         WeatherItem() {
         override fun <T> map(mapper: WeatherUiMapper<T>) = mapper.map(exceptionType = exceptionType)
     }
-}
-
-interface WeatherUiMapper<T> {
-
-    fun map(feelsLike: Int, description: String, temp: Int): T
-
-    fun map(exceptionType: ExceptionType): T
 }

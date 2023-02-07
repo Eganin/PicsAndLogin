@@ -12,6 +12,4 @@ interface LoginComponent {
     }
 
     fun provideLoginInteractor(): LoginInteractor
-
-    companion object
 }

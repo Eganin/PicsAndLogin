@@ -17,7 +17,7 @@ internal class PicsNetworkModule {
 
     @Provides
     @PicScope
-    internal fun providePicsService(converterFactory: GsonConverterFactory): PicsService =
+    fun providePicsService(converterFactory: GsonConverterFactory): PicsService =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(converterFactory)

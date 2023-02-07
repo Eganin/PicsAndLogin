@@ -5,7 +5,7 @@ import com.example.pics_api.PicItem
 import com.example.pics_api.PicsRepository
 import java.net.UnknownHostException
 
-class TestPicsRepositoryImpl(
+internal class TestPicsRepositoryImpl(
     private val mapper: Mapper<List<PicItem>, List<PicDto>>
 ) : PicsRepository {
 

@@ -4,7 +4,7 @@ import com.best.core.mapper.Mapper
 import com.best.login_api.WeatherDto
 import com.best.login_api.WeatherItem
 
-class WeatherItemMapper : Mapper<WeatherItem, WeatherDto> {
+internal class WeatherItemMapper : Mapper<WeatherItem, WeatherDto> {
 
     override fun map(source: WeatherDto) = when {
         source.weatherInnerDto.isEmpty() -> WeatherItem.Error()

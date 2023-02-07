@@ -1,6 +1,6 @@
 package com.example.pics_feature.adapter
 
-interface PicsClickListener {
+internal interface PicsClickListener {
 
     fun loadData()
 

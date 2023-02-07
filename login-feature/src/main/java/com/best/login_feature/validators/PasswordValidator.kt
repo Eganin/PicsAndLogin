@@ -3,7 +3,7 @@ package com.best.login_feature.validators
 import com.best.core.validation.UiValidator
 import java.util.regex.Pattern
 
-class PasswordValidator(
+internal class PasswordValidator(
     errorMessage: String
 ) : UiValidator.Abstract(message = errorMessage) {
     override fun isValid(text: String) =

@@ -2,7 +2,7 @@ package com.example.pics_impl
 
 import com.google.gson.annotations.SerializedName
 
-data class PicDto(
+internal data class PicDto(
     @SerializedName("id")
     val id: String,
     @SerializedName("author")

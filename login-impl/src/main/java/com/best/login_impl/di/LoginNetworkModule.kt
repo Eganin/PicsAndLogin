@@ -19,7 +19,7 @@ internal class LoginNetworkModule {
 
     @LoginScope
     @Provides
-    internal fun provideLoginService(gsonConverterFactory: GsonConverterFactory): LoginService {
+    fun provideLoginService(gsonConverterFactory: GsonConverterFactory): LoginService {
         val loginClient = OkHttpClient.Builder()
             .addInterceptor {
                 val original = it.request()

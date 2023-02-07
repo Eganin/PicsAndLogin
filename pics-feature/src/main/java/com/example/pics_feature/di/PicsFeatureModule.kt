@@ -17,7 +17,7 @@ import dagger.Provides
 import dagger.multibindings.IntoMap
 
 @Module(includes = [PicsFeatureModule.BindsModule::class])
-class PicsFeatureModule {
+internal class PicsFeatureModule {
 
     @Provides
     @PicsFeatureScope

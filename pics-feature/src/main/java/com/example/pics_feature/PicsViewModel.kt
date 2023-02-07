@@ -14,7 +14,7 @@ import com.example.pics_feature.adapter.PicUiModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class PicsViewModel @Inject constructor(
+internal class PicsViewModel @Inject constructor(
     private val communication: ViewModelCommunication<List<PicUiModel>>,
     private val interactor: PicsInteractor,
     private val mapper: Mapper<List<PicUiModel>, List<PicItem>>,

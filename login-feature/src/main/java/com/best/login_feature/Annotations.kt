@@ -1,11 +1,11 @@
-package com.example.picsangloginapp.di
+package com.best.login_feature
 
 import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class EmailValidation
+internal annotation class EmailValidation
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class PasswordValidation
+internal annotation class PasswordValidation

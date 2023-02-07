@@ -4,4 +4,4 @@ import javax.inject.Scope
 
 @Scope
 @Retention(AnnotationRetention.SOURCE)
-annotation class PicsFeatureScope
+internal annotation class PicsFeatureScope

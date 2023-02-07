@@ -7,7 +7,7 @@ import com.example.pics_api.PicItem
 import com.example.pics_api.PicItemUiMapper
 import com.example.pics_feature.adapter.*
 
-class PicsUiMapper(resourceManager: ResourceManager) : Mapper<List<PicUiModel>, List<PicItem>> {
+internal class PicsUiMapper(resourceManager: ResourceManager) : Mapper<List<PicUiModel>, List<PicItem>> {
 
     private val fullSizeErrorMapper =
         PicUiMapper(type = PicUiModelType.FULL_SIZE_ERROR, resourceManager = resourceManager)
@@ -42,7 +42,7 @@ class PicsUiMapper(resourceManager: ResourceManager) : Mapper<List<PicUiModel>, 
     }
 }
 
-class PicUiMapper(
+internal class PicUiMapper(
     private val type: PicUiModelType,
     private val resourceManager: ResourceManager
 ) : PicItemUiMapper<PicUiModel> {

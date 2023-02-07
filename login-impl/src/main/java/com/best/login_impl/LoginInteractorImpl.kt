@@ -7,7 +7,7 @@ import com.best.login_api.WeatherItem
 import javax.inject.Inject
 
 
-class LoginInteractorImpl @Inject constructor(
+internal class LoginInteractorImpl @Inject constructor(
     private val repository: LoginRepository,
     private val exceptionHandler: ExceptionHandler
 ) : LoginInteractor {

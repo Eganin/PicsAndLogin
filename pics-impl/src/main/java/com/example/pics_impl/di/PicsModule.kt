@@ -31,7 +31,7 @@ internal class PicsModule {
 
     @PicScope
     @Provides
-    internal fun providePicsInteractor(
+    fun providePicsInteractor(
         repository: PicsRepository,
         exceptionHandler: ExceptionHandler
     ): PicsInteractor = PicsInteractorImpl(

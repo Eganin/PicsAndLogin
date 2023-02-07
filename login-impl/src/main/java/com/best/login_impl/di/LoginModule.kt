@@ -13,7 +13,7 @@ internal class LoginModule {
 
     @LoginScope
     @Provides
-    internal fun provideLoginInteractor(
+    fun provideLoginInteractor(
         repository: LoginRepository,
         exceptionHandler: ExceptionHandler
     ): LoginInteractor =
@@ -24,11 +24,11 @@ internal class LoginModule {
 
     @LoginScope
     @Provides
-    internal fun provideWeatherItemMapper(): Mapper<WeatherItem, WeatherDto> = WeatherItemMapper()
+    fun provideWeatherItemMapper(): Mapper<WeatherItem, WeatherDto> = WeatherItemMapper()
 
     @LoginScope
     @Provides
-    internal fun provideLoginRepository(
+    fun provideLoginRepository(
         service: LoginService,
         mapper: Mapper<WeatherItem, WeatherDto>
     ): LoginRepository = LoginRepositoryImpl(service = service, mapper = mapper)

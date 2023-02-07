@@ -13,6 +13,4 @@ interface PicComponent {
     }
 
     fun providePicsInteractor(): PicsInteractor
-
-    companion object
 }

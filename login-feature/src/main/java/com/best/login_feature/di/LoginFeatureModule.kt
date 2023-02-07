@@ -13,15 +13,15 @@ import com.best.login_feature.*
 import com.best.login_feature.validators.EmptinessValidator
 import com.best.login_feature.validators.MinLengthValidator
 import com.best.login_feature.validators.PasswordValidator
-import com.example.picsangloginapp.di.EmailValidation
-import com.example.picsangloginapp.di.PasswordValidation
+import com.best.login_feature.EmailValidation
+import com.best.login_feature.PasswordValidation
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
 
 @Module(includes = [LoginFeatureModule.BindsModule::class])
-class LoginFeatureModule {
+internal class LoginFeatureModule {
 
     @LoginFeatureScope
     @Provides

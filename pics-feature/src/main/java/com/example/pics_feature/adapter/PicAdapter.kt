@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import com.best.core.other.inflate
 import com.example.pics_feature.R
 
-class PicAdapter(private val clickListener: PicsClickListener) :
+internal class PicAdapter(private val clickListener: PicsClickListener) :
     ListAdapter<PicUiModel, PicBaseViewHolder>(PicUiModelDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PicBaseViewHolder =
@@ -33,7 +33,7 @@ class PicAdapter(private val clickListener: PicsClickListener) :
     override fun getItemViewType(position: Int) = currentList[position].type.ordinal
 }
 
-class PicUiModelDiffUtilCallback : DiffUtil.ItemCallback<PicUiModel>() {
+internal class PicUiModelDiffUtilCallback : DiffUtil.ItemCallback<PicUiModel>() {
     override fun areItemsTheSame(oldItem: PicUiModel, newItem: PicUiModel): Boolean {
         return oldItem.type == newItem.type
     }

@@ -10,7 +10,7 @@ import dagger.Component
     dependencies = [CoreComponent::class]
 )
 @LoginScope
-interface LoginComponentImpl : LoginComponent {
+internal interface LoginComponentImpl : LoginComponent {
 
     @Component.Builder
     interface Builder : LoginComponent.Builder

@@ -4,7 +4,7 @@ import com.best.core.exception.ExceptionType
 import com.best.core.resourcemanager.ResourceManager
 import com.best.login_api.WeatherUiMapper
 
-class WeatherUiMapperImpl(private val resourceManager: ResourceManager) :
+internal class WeatherUiMapperImpl(private val resourceManager: ResourceManager) :
     WeatherUiMapper<WeatherUiModel> {
     override fun map(feelsLike: Int, description: String, temp: Int)=
         WeatherUiModel(

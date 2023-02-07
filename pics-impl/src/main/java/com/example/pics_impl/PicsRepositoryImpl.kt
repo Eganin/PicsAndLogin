@@ -9,7 +9,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import javax.inject.Inject
 
-class PicsRepositoryImpl @Inject constructor(
+internal class PicsRepositoryImpl @Inject constructor(
     private val service: PicsService,
     private val mapper: Mapper<List<PicItem>, List<PicDto>>
 ) : PicsRepository {

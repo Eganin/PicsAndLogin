@@ -10,13 +10,11 @@ import com.best.core.observer.ViewModelCommunication
 import com.best.core.validation.UiValidator
 import com.best.login_api.LoginInteractor
 import com.best.login_api.WeatherUiMapper
-import com.example.picsangloginapp.di.EmailValidation
-import com.example.picsangloginapp.di.PasswordValidation
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class LoginViewModel @Inject constructor(
+internal class LoginViewModel @Inject constructor(
     private val communication: ViewModelCommunication<LoginState>,
     private val interactor: LoginInteractor,
     private val mapper: WeatherUiMapper<WeatherUiModel>,

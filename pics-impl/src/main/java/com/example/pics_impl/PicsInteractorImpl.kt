@@ -7,7 +7,7 @@ import com.example.pics_api.PicsInteractor
 import com.example.pics_api.PicsRepository
 import javax.inject.Inject
 
-class PicsInteractorImpl @Inject constructor(
+internal class PicsInteractorImpl @Inject constructor(
     private val repository: PicsRepository,
     private val exceptionHandler: ExceptionHandler
 ) : PicsInteractor {
