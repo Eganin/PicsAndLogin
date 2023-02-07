@@ -1,11 +1,11 @@
-package com.example.picsangloginapp.ui.pics.adapter
+package com.example.pics_feature.adapter
 
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.example.picsangloginapp.R
 import com.best.core.other.inflate
+import com.example.pics_feature.R
 
 class PicAdapter(private val clickListener: PicsClickListener) :
     ListAdapter<PicUiModel, PicBaseViewHolder>(PicUiModelDiffUtilCallback()) {

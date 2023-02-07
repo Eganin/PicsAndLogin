@@ -1,11 +1,11 @@
-package com.example.picsangloginapp.ui.pics.adapter
+package com.example.pics_feature.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.picsangloginapp.databinding.BottomErrorLayoutBinding
-import com.example.picsangloginapp.databinding.FullsizeErrorLayoutBinding
-import com.example.picsangloginapp.databinding.FullsizeLoaderLayoutBinding
-import com.example.picsangloginapp.databinding.PicViewHolderBinding
+import com.example.pics_feature.databinding.BottomErrorLayoutBinding
+import com.example.pics_feature.databinding.FullsizeErrorLayoutBinding
+import com.example.pics_feature.databinding.FullsizeLoaderLayoutBinding
+import com.example.pics_feature.databinding.PicViewHolderBinding
 
 abstract class PicBaseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     open fun onBind(model: PicUiModel) {}

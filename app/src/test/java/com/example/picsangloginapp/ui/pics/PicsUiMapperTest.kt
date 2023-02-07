@@ -3,7 +3,8 @@ package com.example.picsangloginapp.ui.pics
 import com.best.core.exception.ExceptionType
 import com.best.core.resourcemanager.TestResourceManager
 import com.example.pics_api.PicItem
-import com.example.picsangloginapp.ui.pics.adapter.*
+import com.example.pics_feature.PicsUiMapper
+import com.example.pics_feature.adapter.*
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 

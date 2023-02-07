@@ -1,4 +1,4 @@
-package com.example.picsangloginapp.ui.pics
+package com.example.pics_feature
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
@@ -10,7 +10,7 @@ import com.best.core.observer.Observe
 import com.best.core.observer.ViewModelCommunication
 import com.example.pics_api.PicItem
 import com.example.pics_api.PicsInteractor
-import com.example.picsangloginapp.ui.pics.adapter.PicUiModel
+import com.example.pics_feature.adapter.PicUiModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

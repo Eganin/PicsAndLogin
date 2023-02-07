@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.best.login_feature.LoginFeature
+import com.example.pics_feature.PicsFeature
 import com.example.picsangloginapp.R
 import com.example.picsangloginapp.databinding.FragmentMainBinding
 import com.example.picsangloginapp.di.RootComponentHolder
@@ -35,6 +36,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         RootComponentHolder.get().inject(mainFragment = this)
         rootInteractor.initFeature(feature = LoginFeature(isEnabled = true))
+        rootInteractor.initFeature(feature = PicsFeature(isEnabled = true))
         val navController =
             (childFragmentManager.findFragmentById(R.id.mainContainerView) as NavHostFragment).navController
         binding.mainBottomNavigationView.setupWithNavController(navController)

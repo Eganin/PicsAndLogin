@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PicsAngLoginApp</string>
+    <string name="network_exception">Network is unavailable</string>
+    <string name="some_exception">Something went wrong</string>
+    <string name="empty_string_error_message">Input is empty</string>
+    <string name="invalid_email_error_message">Email is incorrect</string>
+    <string name="invalid_min_length_error_message">Input should be at least %d signs long</string>
+    <string name="invalid_password_error_message">Password should contain at least 1 lowercase letter, 1 uppercase letter and 1 digit</string>
+    <string name="title_pics">Pictures</string>
+    <string name="title_login">Login</string>
+    <string name="error_message_bottom">Error occurred while loading data</string>
+    <string name="try_again">Try again</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="weather_description">Погода сегодня: %s, температура: %d, ощущается как %d</string>
+    <string name="logo_url"><![CDATA[https://drive.google.com/u/0/uc?id=1fJGLqz7ynMLSiCiIZvFYuweW_Tc0wO8m&export=download]]></string>
+    <string name="splash_fragment">Splash</string>
+    <string name="main_fragment">Main</string>
+</resources>

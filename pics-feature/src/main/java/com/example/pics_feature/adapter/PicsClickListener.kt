@@ -1,4 +1,4 @@
-package com.example.picsangloginapp.ui.pics.adapter
+package com.example.pics_feature.adapter
 
 interface PicsClickListener {
 

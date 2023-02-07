@@ -1,19 +1,18 @@
-package com.example.picsangloginapp.ui.pics
+package com.example.pics_feature
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.best.core.di.viewmodel.VmFactoryWrapper
-import com.example.picsangloginapp.databinding.FragmentPicsBinding
-import com.example.picsangloginapp.di.RootComponentHolder
-import com.example.picsangloginapp.ui.pics.adapter.PicAdapter
-import com.example.picsangloginapp.ui.pics.adapter.PicsClickListener
+import com.example.pics_feature.adapter.PicAdapter
+import com.example.pics_feature.adapter.PicsClickListener
+import com.example.pics_feature.databinding.FragmentPicsBinding
+import com.example.pics_feature.di.PicsFeatureComponentHolder
 
 class PicsFragment : Fragment(), PicsClickListener {
 
@@ -38,7 +37,7 @@ class PicsFragment : Fragment(), PicsClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        RootComponentHolder.get().inject(vmFactoryWrapper=vmFactoryWrapper)
+        PicsFeatureComponentHolder.get().inject(vmFactoryWrapper = vmFactoryWrapper)
         setupAdapter()
         viewModel.observe(owner = viewLifecycleOwner) {
             picsAdapter.submitList(it)

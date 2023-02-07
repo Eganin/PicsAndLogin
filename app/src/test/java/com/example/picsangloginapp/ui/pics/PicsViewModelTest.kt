@@ -4,8 +4,10 @@ import com.best.core.exception.ExceptionType
 import com.best.core.resourcemanager.TestResourceManager
 import com.example.pics_api.PicItem
 import com.example.pics_api.PicsInteractor
+import com.example.pics_feature.PicsUiMapper
+import com.example.pics_feature.PicsViewModel
+import com.example.pics_feature.adapter.*
 import com.example.picsangloginapp.ui.BaseUiTest
-import com.example.picsangloginapp.ui.pics.adapter.*
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/picsFragment"
-        android:name="com.example.picsangloginapp.ui.pics.PicsFragment"
+        android:name="com.example.pics_feature.PicsFragment"
         android:label="PicsFragment" />
 
     <fragment
