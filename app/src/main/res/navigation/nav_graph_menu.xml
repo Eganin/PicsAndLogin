@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_application"
+    android:id="@+id/nav_graph_menu"
     app:startDestination="@id/picsFragment">
 
-    <include app:graph="@navigation/nav_graph_login" />
     <fragment
         android:id="@+id/picsFragment"
         android:name="com.example.picsangloginapp.ui.pics.PicsFragment"
         android:label="PicsFragment" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.best.login_feature.LoginFragment"
+        android:label="LoginFragment" />
 </navigation>

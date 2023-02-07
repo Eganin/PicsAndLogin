@@ -5,39 +5,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import com.best.core.di.viewmodel.VmFactoryWrapper
 import com.best.core.other.listenChanges
 import com.best.core.other.load
 import com.best.login_feature.databinding.FragmentLayoutBinding
+import com.best.login_feature.di.LoginFeatureComponentHolder
 
 class LoginFragment : Fragment() {
 
-    private var _binding : FragmentLayoutBinding? = null
-
+    private var _binding: FragmentLayoutBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel : LoginViewModel by viewModels()
+    private val vmFactoryWrapper = VmFactoryWrapper()
+    private val viewModel: LoginViewModel by lazy {
+        ViewModelProvider(this, vmFactoryWrapper.factory)[LoginViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding= FragmentLayoutBinding.inflate(inflater,container,false)
+        _binding = FragmentLayoutBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        LoginFeatureComponentHolder.get().inject(vmFactoryWrapper = vmFactoryWrapper)
         setupUI()
     }
 
-    private fun setupUI(){
+    private fun setupUI() {
         binding.progressBar.bringToFront()
         binding.logoImageView.load(getString(R.string.logo_url))
 
-        viewModel.observe(owner = viewLifecycleOwner){
-            it.handle(binding=binding)
+        viewModel.observe(owner = viewLifecycleOwner) {
+            it.handle(binding = binding)
         }
 
         binding.loginButton.setOnClickListener {
@@ -58,6 +63,6 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding=null
+        _binding = null
     }
 }
