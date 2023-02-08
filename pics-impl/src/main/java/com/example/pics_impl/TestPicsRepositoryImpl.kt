@@ -1,8 +1,9 @@
 package com.example.pics_impl
 
 import com.best.core.mapper.Mapper
-import com.example.pics_api.PicItem
+import com.example.pics_api.models.PicItem
 import com.example.pics_api.PicsRepository
+import com.example.pics_impl.models.PicDto
 import java.net.UnknownHostException
 
 internal class TestPicsRepositoryImpl(

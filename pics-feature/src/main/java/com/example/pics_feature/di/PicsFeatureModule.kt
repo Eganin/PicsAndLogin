@@ -7,7 +7,7 @@ import com.best.core.di.viewmodel.ViewModelKey
 import com.best.core.mapper.Mapper
 import com.best.core.observer.ViewModelCommunication
 import com.best.core.resourcemanager.ResourceManager
-import com.example.pics_api.PicItem
+import com.example.pics_api.models.PicItem
 import com.example.pics_feature.PicsUiMapper
 import com.example.pics_feature.PicsViewModel
 import com.example.pics_feature.adapter.PicUiModel

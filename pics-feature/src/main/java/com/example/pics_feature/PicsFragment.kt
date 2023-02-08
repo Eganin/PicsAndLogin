@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.best.core.di.viewmodel.VmFactoryWrapper
@@ -26,8 +26,8 @@ class PicsFragment : Fragment(), PicsClickListener {
     private lateinit var picsAdapter: PicAdapter
 
     private val vmFactoryWrapper = VmFactoryWrapper()
-    private val viewModel: PicsViewModel by lazy {
-        ViewModelProvider(this, vmFactoryWrapper.factory)[PicsViewModel::class.java]
+    private val viewModel: PicsViewModel by viewModels {
+        vmFactoryWrapper.factory
     }
 
     override fun onCreateView(

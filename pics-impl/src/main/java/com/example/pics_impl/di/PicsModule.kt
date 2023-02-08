@@ -2,12 +2,12 @@ package com.example.pics_impl.di
 
 import com.best.core.exception.ExceptionHandler
 import com.best.core.mapper.Mapper
-import com.example.pics_api.PicItem
+import com.example.pics_api.models.PicItem
 import com.example.pics_api.PicsInteractor
 import com.example.pics_api.PicsRepository
 import com.example.pics_api.PicsService
 import com.example.pics_api.di.PicScope
-import com.example.pics_impl.PicDto
+import com.example.pics_impl.models.PicDto
 import com.example.pics_impl.PicItemMapper
 import com.example.pics_impl.PicsInteractorImpl
 import com.example.pics_impl.PicsRepositoryImpl

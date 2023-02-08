@@ -8,13 +8,15 @@ import com.best.core.observer.ViewModelCommunication
 import com.best.core.resourcemanager.ResourceManager
 import com.best.core.validation.UiValidator
 import com.best.core.validation.UiValidatorChain
-import com.best.login_api.WeatherUiMapper
+import com.best.login_api.models.WeatherUiMapper
 import com.best.login_feature.*
 import com.best.login_feature.validators.EmptinessValidator
 import com.best.login_feature.validators.MinLengthValidator
 import com.best.login_feature.validators.PasswordValidator
 import com.best.login_feature.EmailValidation
 import com.best.login_feature.PasswordValidation
+import com.best.login_feature.models.LoginState
+import com.best.login_feature.models.WeatherUiModel
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

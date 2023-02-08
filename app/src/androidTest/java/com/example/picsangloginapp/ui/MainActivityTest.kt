@@ -6,7 +6,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.picsangloginapp.R
+import com.best.login_feature.R
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,7 +19,7 @@ internal class MainActivityTest {
 
     @Test
     fun ui_test() {
-        onView(withId(R.id.navigation_login)).perform(click())
+        onView(withId(com.example.picsangloginapp.R.id.loginFragment)).perform(click())
         onView(withId(R.id.logoImageView)).check(matches(isDisplayed()))
 
         onView(withId(R.id.loginButton)).perform(click())

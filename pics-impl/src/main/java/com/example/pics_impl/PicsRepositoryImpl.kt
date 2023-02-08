@@ -2,9 +2,10 @@ package com.example.pics_impl
 
 import com.best.core.mapper.Mapper
 import com.best.core.other.stringSuspending
-import com.example.pics_api.PicItem
+import com.example.pics_api.models.PicItem
 import com.example.pics_api.PicsRepository
 import com.example.pics_api.PicsService
+import com.example.pics_impl.models.PicDto
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import javax.inject.Inject

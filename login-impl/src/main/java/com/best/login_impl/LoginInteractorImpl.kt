@@ -3,7 +3,7 @@ package com.best.login_impl
 import com.best.core.exception.ExceptionHandler
 import com.best.login_api.LoginInteractor
 import com.best.login_api.LoginRepository
-import com.best.login_api.WeatherItem
+import com.best.login_api.models.WeatherItem
 import javax.inject.Inject
 
 

@@ -4,6 +4,8 @@ import com.best.core.exception.ExceptionHandler
 import com.best.core.mapper.Mapper
 import com.best.login_api.*
 import com.best.login_api.di.LoginScope
+import com.best.login_api.models.WeatherDto
+import com.best.login_api.models.WeatherItem
 import com.best.login_impl.*
 import dagger.Module
 import dagger.Provides

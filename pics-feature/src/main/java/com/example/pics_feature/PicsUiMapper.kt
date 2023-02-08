@@ -3,8 +3,8 @@ package com.example.pics_feature
 import com.best.core.exception.ExceptionType
 import com.best.core.mapper.Mapper
 import com.best.core.resourcemanager.ResourceManager
-import com.example.pics_api.PicItem
-import com.example.pics_api.PicItemUiMapper
+import com.example.pics_api.models.PicItem
+import com.example.pics_api.models.PicItemUiMapper
 import com.example.pics_feature.adapter.*
 
 internal class PicsUiMapper(resourceManager: ResourceManager) : Mapper<List<PicUiModel>, List<PicItem>> {

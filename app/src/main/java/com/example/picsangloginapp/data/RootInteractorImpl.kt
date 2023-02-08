@@ -3,12 +3,12 @@ package com.example.picsangloginapp.data
 import com.best.core.Feature
 import com.best.core.di.CoreComponentHolder
 import com.best.login_api.di.LoginComponentDependencies
-import com.best.login_feature.LoginFeature
+import com.best.login_feature.models.LoginFeature
 import com.best.login_feature.di.LoginFeatureComponentDependencies
 import com.best.login_feature.di.LoginFeatureComponentHolder
 import com.best.login_provider.loginComponentHolder
 import com.example.pics_api.di.PicComponentDependencies
-import com.example.pics_feature.PicsFeature
+import com.example.pics_feature.models.PicsFeature
 import com.example.pics_feature.di.PicsFeatureComponentDependencies
 import com.example.pics_feature.di.PicsFeatureComponentHolder
 import com.example.pics_provider.picsComponentHolder

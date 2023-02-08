@@ -9,7 +9,9 @@ import com.best.core.observer.Observe
 import com.best.core.observer.ViewModelCommunication
 import com.best.core.validation.UiValidator
 import com.best.login_api.LoginInteractor
-import com.best.login_api.WeatherUiMapper
+import com.best.login_api.models.WeatherUiMapper
+import com.best.login_feature.models.LoginState
+import com.best.login_feature.models.WeatherUiModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

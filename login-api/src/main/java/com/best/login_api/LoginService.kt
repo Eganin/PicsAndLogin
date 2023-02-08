@@ -1,5 +1,6 @@
 package com.best.login_api
 
+import com.best.login_api.models.WeatherDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.best.login_feature.LoginFeature
-import com.example.pics_feature.PicsFeature
+import com.best.login_feature.models.LoginFeature
+import com.example.pics_feature.models.PicsFeature
 import com.example.picsangloginapp.R
 import com.example.picsangloginapp.databinding.FragmentMainBinding
 import com.example.picsangloginapp.di.RootComponentHolder

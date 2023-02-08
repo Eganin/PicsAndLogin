@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.best.core.di.viewmodel.VmFactoryWrapper
 import com.best.core.other.listenChanges
 import com.best.core.other.load
@@ -18,8 +18,8 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val vmFactoryWrapper = VmFactoryWrapper()
-    private val viewModel: LoginViewModel by lazy {
-        ViewModelProvider(this, vmFactoryWrapper.factory)[LoginViewModel::class.java]
+    private val viewModel: LoginViewModel by viewModels {
+        vmFactoryWrapper.factory
     }
 
     override fun onCreateView(
